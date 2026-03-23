@@ -353,13 +353,13 @@ body.men-mode .men-section {
    display: inline-flex;
    align-items: center;
    gap: 8px;
-   background: var(--w-olive-l);
+   background: var(--w-accent-light);
    border-radius: 100px;
    padding: 7px 16px;
    font-size: 11px;
    letter-spacing: 2px;
    text-transform: uppercase;
-   color: var(--w-olive);
+   color: var(--w-accent);
    font-weight: 500;
    margin-bottom: 32px;
    width: fit-content
