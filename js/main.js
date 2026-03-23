@@ -161,6 +161,12 @@ function renderPDP(){
 function setPdpImg(i){pdpImgIdx=i;const im=document.getElementById('pdp-main-img');im.style.opacity='0';setTimeout(()=>{im.src=pdpImages[i];im.style.opacity='1'},180);document.querySelectorAll('.pdp-dot').forEach((d,j)=>d.classList.toggle('active',j===i));document.querySelectorAll('.pdp-thumb').forEach((t,j)=>t.classList.toggle('active',j===i));}
 function pdpPrev(){setPdpImg((pdpImgIdx-1+pdpImages.length)%pdpImages.length)}
 function pdpNext(){setPdpImg((pdpImgIdx+1)%pdpImages.length)}
+
+function pickFreq(el, freqName){
+  document.querySelectorAll('.freq-opt.sel').forEach(function(e){e.classList.remove('sel');});
+  el.classList.add('sel');
+  pdpFreq=freqName;
+}
 function pickColor(el){
   document.querySelectorAll('.cswatch.sel').forEach(function(e){e.classList.remove('sel');});
   el.classList.add('sel');
