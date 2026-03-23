@@ -1,518 +1,886 @@
 <!DOCTYPE html>
 <html lang="sv">
+
 <head>
-<meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>biiw — premium rakhyvlar</title>
-<link href="https://fonts.googleapis.com/css2?family=EB+Garamond:ital,wght@0,400;0,500;1,400&family=DM+Sans:wght@300;400;500&display=swap" rel="stylesheet">
-<link rel="stylesheet" href="css/style.css">
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>biiw — premium rakhyvlar</title>
+  <link
+    href="https://fonts.googleapis.com/css2?family=EB+Garamond:ital,wght@0,400;0,500;1,400&family=DM+Sans:wght@300;400;500&display=swap"
+    rel="stylesheet">
+  <link rel="stylesheet" href="css/style.css">
 
 </head>
+
 <body>
 
-<!-- ═══════════════════════════════════════════
+  <!-- ═══════════════════════════════════════════
   NAV (shared)
 ══════════════════════════════════════════ -->
-<nav id="main-nav" class="women-nav">
-  <div class="nav-left">
-    <button class="ham-btn" id="ham-btn" onclick="toggleHam()" aria-label="Meny"><span></span><span></span><span></span></button>
-    <ul class="nav-links">
-      <li><a href="#produkter" id="nav-produkter">Produkter</a></li>
-      <li><a href="#butiker" id="nav-butiker">Här finns vi</a></li>
-      <li><a href="#story" id="nav-story">Om biiw</a></li>
-      <li><a href="#hur" id="nav-hur">Hur det fungerar</a></li>
-    </ul>
-  </div>
-  <a href="#hero" class="nav-logo">biiw</a>
-  <div class="nav-right">
-    <div class="gender-toggle">
-      <button class="gt-btn active" id="gt-women" onclick="switchGender('women')">Dam</button>
-      <button class="gt-btn" id="gt-men" onclick="switchGender('men')">Herr</button>
+  <nav id="main-nav" class="women-nav">
+    <div class="nav-left">
+      <button class="ham-btn" id="ham-btn" onclick="toggleHam()"
+        aria-label="Meny"><span></span><span></span><span></span></button>
+      <ul class="nav-links">
+        <li><a href="#produkter" id="nav-produkter">Produkter</a></li>
+        <li><a href="#butiker" id="nav-butiker">Här finns vi</a></li>
+        <li><a href="#story" id="nav-story">Om biiw</a></li>
+        <li><a href="#hur" id="nav-hur">Hur det fungerar</a></li>
+      </ul>
     </div>
-    <button class="nav-cart" onclick="openCart()">
-      <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M6 2L3 6v14a2 2 0 002 2h14a2 2 0 002-2V6l-3-4z"/><line x1="3" y1="6" x2="21" y2="6"/><path d="M16 10a4 4 0 01-8 0"/></svg>
-      Kassa <span class="cart-badge" id="cart-count">0</span>
-    </button>
-  </div>
+    <a href="#hero" class="nav-logo">biiw</a>
+    <div class="nav-right">
+      <div class="gender-toggle">
+        <button class="gt-btn active" id="gt-women" onclick="switchGender('women')">Dam</button>
+        <button class="gt-btn" id="gt-men" onclick="switchGender('men')">Herr</button>
+      </div>
+      <button class="nav-cart" onclick="openCart()">
+        <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"
+          stroke-linecap="round" stroke-linejoin="round">
+          <path d="M6 2L3 6v14a2 2 0 002 2h14a2 2 0 002-2V6l-3-4z" />
+          <line x1="3" y1="6" x2="21" y2="6" />
+          <path d="M16 10a4 4 0 01-8 0" />
+        </svg>
+        Kassa <span class="cart-badge" id="cart-count">0</span>
+      </button>
+    </div>
 
-<div class="ham-menu w-ham" id="ham-menu">
-  <a id="hm-produkter" href="#produkter">Produkter</a>
-  <a id="hm-butiker" href="#butiker">Här finns vi</a>
-  <a id="hm-story" href="#story">Om biiw</a>
-  <a id="hm-hur" href="#hur">Hur det fungerar</a>
-</div>
-</nav>
+    <div class="ham-menu w-ham" id="ham-menu">
+      <a id="hm-produkter" href="#produkter">Produkter</a>
+      <a id="hm-butiker" href="#butiker">Här finns vi</a>
+      <a id="hm-story" href="#story">Om biiw</a>
+      <a id="hm-hur" href="#hur">Hur det fungerar</a>
+    </div>
+  </nav>
 
-<!-- ═══════════════════════════════════════════
+  <!-- ═══════════════════════════════════════════
   WOMEN MAIN SITE
 ══════════════════════════════════════════ -->
-<div id="main-site" class="women-section w-page">
+  <div id="main-site" class="women-section w-page">
 
-<!-- WOMEN HERO -->
-<section id="hero" class="w-hero">
-  <div class="w-hero-left">
-    <div class="w-tag"><span class="w-tag-dot"></span>Skapad i Stockholm · 2026</div>
-    <h1 class="w-h1">Rakning som<br>faktiskt <em>känns</em><br>bra.</h1>
-    <p class="w-sub">Vi gör premium rakhyvlar tillgängliga för alla – med utbytbara blad i rostfritt stål, ett ergonomiskt handtag och en fuktgivande gel-remsa som tar hand om din hud.</p>
-    <div class="w-cta-row">
-      <button class="btn-w-primary" onclick="openPDP('wstart')">Välj startpaket</button>
-      <a href="#hur" class="btn-w-text">Hur det fungerar →</a>
-    </div>
-    <div class="w-trust">
-      <div class="w-trust-item"><span></span><span>Fri frakt</span></div>
-      <div class="w-trust-item"><span></span><span>CE-märkt</span></div>
-      <div class="w-trust-item"><span></span><span>99 kr alltid</span></div>
-      <div class="w-trust-item"><span></span><span>Pausa när du vill</span></div>
-    </div>
-  </div>
-  <div class="w-hero-right" onclick="openPDP('wstart')">
-    <div class="w-hero-blob"></div>
-    <img src="images/dam-razor-1.jpg" alt="biiw dam startpaket">
-    <div class="w-hero-pricebox">
-      <div class="w-hero-price">99 kr</div>
-      <div class="w-hero-price-note">inkl. moms · fri frakt</div>
-      <div class="w-hero-slogans">
-        <span class="w-hero-slogan">Hud som tackar dig</span>
-        <span class="w-hero-slogan">Din rakhyvel, dina regler</span>
-        <span class="w-hero-slogan">Känn skillnaden direkt</span>
-      </div>
-    </div>
-  </div>
-</section>
-
-<!-- WOMEN STRIP -->
-<div class="w-strip">
-  <div class="w-strip-track">
-    <span>Fri frakt</span><span class="w-sep">·</span><span>5-bladssystem</span><span class="w-sep">·</span><span>99 kr alltid</span><span class="w-sep">·</span><span>CE-märkt</span><span class="w-sep">·</span><span>Välj frekvens</span><span class="w-sep">·</span><span>Pausa när du vill</span><span class="w-sep">·</span><span>Var 10e utskick gratis</span><span class="w-sep">·</span><span>Aloe vera gel-remsa</span><span class="w-sep">·</span>
-    <span>Fri frakt</span><span class="w-sep">·</span><span>5-bladssystem</span><span class="w-sep">·</span><span>99 kr alltid</span><span class="w-sep">·</span><span>CE-märkt</span><span class="w-sep">·</span><span>Välj frekvens</span><span class="w-sep">·</span><span>Pausa när du vill</span><span class="w-sep">·</span><span>Var 10e utskick gratis</span><span class="w-sep">·</span><span>Aloe vera gel-remsa</span><span class="w-sep">·</span>
-  </div>
-</div>
-
-<!-- WOMEN FEATURES -->
-<div class="w-features">
-  <div class="w-feat fi"><div class="w-feat-icon"></div><h3>Hudvänlig rakning</h3><p>Aloe vera och vitamin E i gel-remsan aktiveras av vatten och bildar ett skyddande lager mot friktion och rodnad.</p></div>
-  <div class="w-feat fi"><div class="w-feat-icon"></div><h3>5-bladssystem</h3><p>Fem tätt placerade blad i rostfritt stål fångar varje hårstrå i ett enda jämnt drag – slätare resultat, mindre irritation.</p></div>
-  <div class="w-feat fi"><div class="w-feat-icon">️</div><h3>Hållbar design</h3><p>Handtaget är gjort för att hålla livet ut. Byt bara bladet när det behövs – snällare mot plånbok och miljö.</p></div>
-  <div class="w-feat fi"><div class="w-feat-icon"></div><h3>7 personliga färger</h3><p>Rosa, lavendel, mintgrön, sand, lila, terrakotta eller svart. Välj den som speglar dig och ditt badrum.</p></div>
-</div>
-
-<!-- WOMEN PRODUCTS -->
-<section id="produkter" class="w-products">
-  <div class="w-prod-intro fi">
-    <div>
-      <div class="w-eye">Våra produkter</div>
-      <h2 class="w-h2">Två produkter.<br>Ett enkelt val.</h2>
-      <p>Vi tror på enkelhet. Startpaketet ger dig allt du behöver, och Refillpacket håller dig påfylld. Välj frekvens och pausa när du vill.</p>
-    </div>
-    <div style="display:flex;justify-content:flex-end;align-items:flex-end">
-      <p class="w-prod-quote">"Det ska vara<br>enkelt att ta<br>hand om sig."</p>
-    </div>
-  </div>
-  <div class="w-prod-grid">
-    <div class="w-card fi" onclick="openPDP('wstart')">
-      <div class="w-card-img"><img src="images/dam-razor-1.jpg" alt="Startpaket"><span class="w-pill w-pill-rose">Populärast</span></div>
-      <div class="w-card-body">
-        <div class="w-card-name">Startpaket Dam</div>
-        <div class="w-card-desc">Allt i ett paket för att börja din biiw-resa. Ergonomiskt handtag i tung zinklegering och två 5-bladiga blad med fuktgivande gel-remsa. Välj din favoritfärg bland sju alternativ.</div>
-        <div class="w-card-footer">
-          <div class="w-card-price">99 kr<small>inkl. moms</small></div>
-          <button class="w-card-btn" onclick="event.stopPropagation();openPDP('wstart')">Välj & köp →</button>
+    <!-- WOMEN HERO -->
+    <section id="hero" class="w-hero">
+      <div class="w-hero-left">
+        <div class="w-tag"><span class="w-tag-dot"></span>Skapad i Stockholm · 2026</div>
+        <h1 class="w-h1">Rakning som<br>faktiskt <em>känns</em><br>bra.</h1>
+        <p class="w-sub">Vi gör premium rakhyvlar tillgängliga för alla – med utbytbara blad i rostfritt stål, ett
+          ergonomiskt handtag och en fuktgivande gel-remsa som tar hand om din hud.</p>
+        <div class="w-cta-row">
+          <button class="btn-w-primary" onclick="openPDP('wstart')">Välj startpaket</button>
+          <a href="#hur" class="btn-w-text">Hur det fungerar →</a>
+        </div>
+        <div class="w-trust">
+          <div class="w-trust-item"><span></span><span>Fri frakt</span></div>
+          <div class="w-trust-item"><span></span><span>CE-märkt</span></div>
+          <div class="w-trust-item"><span></span><span>99 kr alltid</span></div>
+          <div class="w-trust-item"><span></span><span>Pausa när du vill</span></div>
         </div>
       </div>
-    </div>
-    <div class="w-card fi" onclick="openPDP('wrefill')">
-      <div class="w-card-img olive"><img src="images/dam-razor-2.jpg" alt="Refillpack Dam"><span class="w-pill w-pill-ink">Refill</span></div>
-      <div class="w-card-body">
-        <div class="w-card-name">Refillpack Dam</div>
-        <div class="w-card-desc">Fyra 5-bladiga rakblad med inbyggd aloe vera gel-remsa. Passar alla biiw-handtag för damer. Välj hur ofta du vill få nya blad levererade hem.</div>
-        <div class="w-card-footer">
-          <div class="w-card-price">99 kr<small>4-pack</small></div>
-          <button class="w-card-btn" onclick="event.stopPropagation();openPDP('wrefill')">Välj & köp →</button>
+      <div class="w-hero-right" onclick="openPDP('wstart')">
+        <div class="w-hero-blob"></div>
+        <img src="images/dam-razor-hero.jpg" alt="biiw dam startpaket">
+        <div class="w-hero-pricebox">
+          <div class="w-hero-price">99 kr</div>
+          <div class="w-hero-price-note">inkl. moms · fri frakt</div>
+          <div class="w-hero-slogans">
+            <span class="w-hero-slogan">Hud som tackar dig</span>
+            <span class="w-hero-slogan">Din rakhyvel, dina regler</span>
+            <span class="w-hero-slogan">Känn skillnaden direkt</span>
+          </div>
         </div>
       </div>
-    </div>
-  </div>
-</section>
+    </section>
 
-<!-- WOMEN GALLERY -->
-<div class="w-gallery">
-  <div class="w-gal-grid">
-    <div class="w-gi"><img src="images/dam-razor-3.jpg" alt=""></div>
-    <div class="w-gi"><img src="images/dam-razor-1.jpg" alt=""></div>
-    <div class="w-gi"><img src="images/dam-razor-4.jpg" alt=""></div>
-    <div class="w-gi"><img src="images/dam-razor-5.jpg" alt=""></div>
-    <div class="w-gi"><img src="images/dam-razor-2.jpg" alt=""></div>
-  </div>
-</div>
-
-<!-- WOMEN BUTIKER -->
-<section id="butiker" class="w-butiker">
-  <div class="w-butiker-header" onclick="toggleCurtain('w')">
-    <div><div class="w-butiker-eye">Återförsäljare</div><div class="w-butiker-title">Här finns vi</div></div>
-    <div class="w-butiker-arrow" id="w-arrow">↓</div>
-  </div>
-  <div class="w-butiker-curtain" id="w-curtain">
-    <div class="w-butiker-inner">
-      <p class="w-butiker-intro">biiw finns att köpa i utvalda fysiska butiker runt om i Sverige.</p>
-      <div style="display:flex;flex-direction:column;gap:16px">
-        <div class="store-card"><img src="images/logo-hm.png" alt="H&M"></div>
-        <div class="store-card"><img src="images/logo-ahlens.png" alt="Åhléns"></div>
+    <!-- WOMEN STRIP -->
+    <div class="w-strip">
+      <div class="w-strip-track">
+        <span>Fri frakt</span><span class="w-sep">·</span><span>5-bladssystem</span><span class="w-sep">·</span><span>99
+          kr alltid</span><span class="w-sep">·</span><span>CE-märkt</span><span class="w-sep">·</span><span>Välj
+          frekvens</span><span class="w-sep">·</span><span>Pausa när du vill</span><span class="w-sep">·</span><span>Var
+          10e utskick gratis</span><span class="w-sep">·</span><span>Aloe vera gel-remsa</span><span
+          class="w-sep">·</span>
+        <span>Fri frakt</span><span class="w-sep">·</span><span>5-bladssystem</span><span class="w-sep">·</span><span>99
+          kr alltid</span><span class="w-sep">·</span><span>CE-märkt</span><span class="w-sep">·</span><span>Välj
+          frekvens</span><span class="w-sep">·</span><span>Pausa när du vill</span><span class="w-sep">·</span><span>Var
+          10e utskick gratis</span><span class="w-sep">·</span><span>Aloe vera gel-remsa</span><span
+          class="w-sep">·</span>
       </div>
     </div>
-  </div>
-</section>
 
-<!-- WOMEN STORY -->
-<section id="story" class="w-story">
-  <div class="w-story-img"><img src="images/dam-razor-4.jpg" alt="biiw detalj"></div>
-  <div class="w-story-txt">
-    <div class="w-eye">Historien bakom biiw</div>
-    <h2 class="w-h2">Skapad ur<br>frustration –<br>och kärlek.</h2>
-    <p>Det började med en enkel fråga: varför kostar bra rakhyvlar så orimligt mycket? Vi letade, jämförde och tröttnade på svaret. Så vi byggde vår egen.</p>
-    <p>biiw skapades i Stockholm med ett mål – att göra premium rakning tillgängligt för alla, utan kompromisser på kvalitet, design eller känsla.</p>
-    <div class="w-vals">
-      <div class="w-val"><h4>Tillgänglighet</h4><p>Premium kvalitet till ett pris alla har råd med – alltid 99 kr</p></div>
-      <div class="w-val"><h4>Omsorg</h4><p>Varje produkt designad med din hud och vardag i åtanke</p></div>
-      <div class="w-val"><h4>Hållbarhet</h4><p>Utbytbara blad, minimal förpackning, ansvarsfullt inköp</p></div>
-      <div class="w-val"><h4>Ärlighet</h4><p>Inga dolda avgifter, inga bindningstider</p></div>
-    </div>
-  </div>
-</section>
-
-<!-- WOMEN HOW -->
-<section id="hur" class="w-how">
-  <div class="fi"><div class="w-eye">Hur det fungerar</div><h2 class="w-h2">Enkelt från start till leverans</h2></div>
-  <div class="w-how-grid">
-    <div class="fi"><div class="w-how-num">01</div><div class="w-how-title">Välj din produkt</div><p class="w-how-desc">Börja med startpaketet för att få handtag och blad i ett, eller välj refillpack om du redan har ett biiw-handtag. Välj färg och leveransfrekvens.</p></div>
-    <div class="fi"><div class="w-how-num">02</div><div class="w-how-title">Vi skickar hem</div><p class="w-how-desc">Fri frakt direkt till din dörr. Prenumerationen skickas automatiskt med din valda frekvens. Du får ett mejl innan varje utskick.</p></div>
-    <div class="fi"><div class="w-how-num">03</div><div class="w-how-title">Raka med glädje</div><p class="w-how-desc">Ergonomiskt handtag, vassa blad och fuktgivande gel-remsa. Var 10e utskick gratis – helt automatiskt.</p></div>
-  </div>
-</section>
-
-<!-- WOMEN CONTACT -->
-<section id="kontakt" class="w-contact">
-  <div class="w-contact-wrap">
-    <div class="w-contact-left fi">
-      <div class="w-eye">Kontakt</div>
-      <h2 class="w-h2">Vi finns här för dig</h2>
-      <h3>Skriv till oss</h3>
-      <p>Har du frågor om produkten, din prenumeration, en retur eller bara vill säga hej? Vi läser varenda mejl och svarar alltid inom ett dygn.</p>
-      <div class="w-kd"><div class="w-kd-icon"><svg width="20" height="20" viewBox="0 0 20 20" fill="none" xmlns="http://www.w3.org/2000/svg"><rect x="2" y="4" width="16" height="12" rx="2" stroke="currentColor" stroke-width="1.4"/><path d="M2 6L10 11L18 6" stroke="currentColor" stroke-width="1.4" stroke-linecap="round"/></svg></div><span><a href="/cdn-cgi/l/email-protection" class="__cf_email__" data-cfemail="0a626f604a6863637d24796f">[email&#160;protected]</a></span></div>
-      <div class="w-kd"><div class="w-kd-icon"><svg width="20" height="20" viewBox="0 0 20 20" fill="none" xmlns="http://www.w3.org/2000/svg"><path d="M10 2C7.24 2 5 4.24 5 7C5 11 10 18 10 18C10 18 15 11 15 7C15 4.24 12.76 2 10 2Z" stroke="currentColor" stroke-width="1.4" stroke-linejoin="round"/><circle cx="10" cy="7" r="2" stroke="currentColor" stroke-width="1.4"/></svg></div><span>Stockholm, Sverige</span></div>
-      <div class="w-kd"><div class="w-kd-icon"><svg width="20" height="20" viewBox="0 0 20 20" fill="none" xmlns="http://www.w3.org/2000/svg"><rect x="3" y="3" width="14" height="14" rx="4" stroke="currentColor" stroke-width="1.4"/><circle cx="10" cy="10" r="3" stroke="currentColor" stroke-width="1.4"/><circle cx="14.5" cy="5.5" r="1" fill="currentColor"/></svg></div><span>@biiw.se på Instagram</span></div>
-    </div>
-    <form class="w-form fi" onsubmit="submitForm(event,'w')">
-      <div class="w-form-row">
-        <div class="w-fg"><label class="w-label">Namn</label><input class="w-input" type="text" placeholder="Ditt namn" required></div>
-        <div class="w-fg"><label class="w-label">E-post</label><input class="w-input" type="email" placeholder="din@email.se" required></div>
+    <!-- WOMEN FEATURES -->
+    <div class="w-features">
+      <div class="w-feat fi">
+        <div class="w-feat-icon"></div>
+        <h3>Hudvänlig rakning</h3>
+        <p>Aloe vera och vitamin E i gel-remsan aktiveras av vatten och bildar ett skyddande lager mot friktion och
+          rodnad.</p>
       </div>
-      <div class="w-fg"><label class="w-label">Ämne</label><select class="w-input"><option>Produktfråga</option><option>Min prenumeration</option><option>Retur</option><option>Samplingsamarbete</option><option>Investering</option></select></div>
-      <div class="w-fg"><label class="w-label">Meddelande</label><textarea class="w-input" style="min-height:120px" placeholder="Berätta mer..."></textarea></div>
-      <button type="submit" class="btn-w-primary" style="align-self:flex-start">Skicka →</button>
-    </form>
-  </div>
-</section>
+      <div class="w-feat fi">
+        <div class="w-feat-icon"></div>
+        <h3>5-bladssystem</h3>
+        <p>Fem tätt placerade blad i rostfritt stål fångar varje hårstrå i ett enda jämnt drag – slätare resultat,
+          mindre irritation.</p>
+      </div>
+      <div class="w-feat fi">
+        <div class="w-feat-icon">️</div>
+        <h3>Hållbar design</h3>
+        <p>Handtaget är gjort för att hålla livet ut. Byt bara bladet när det behövs – snällare mot plånbok och miljö.
+        </p>
+      </div>
+      <div class="w-feat fi">
+        <div class="w-feat-icon"></div>
+        <h3>7 personliga färger</h3>
+        <p>Rosa, lavendel, mintgrön, sand, lila, terrakotta eller svart. Välj den som speglar dig och ditt badrum.</p>
+      </div>
+    </div>
 
-<!-- WOMEN FOOTER -->
-<footer class="w-footer">
-  <div class="w-footer-top">
-    <div class="w-footer-brand"><div class="w-footer-logo">biiw</div><p>biiw skapades i Stockholm ur övertygelsen att bra rakhyvlar inte behöver kosta skjortan. Premium tillgängligt för alla.</p></div>
-    <div class="w-fc"><h4>Produkter</h4><p class="w-fc-desc">Två produkter, ett pris.</p><a href="#" onclick="openPDP('wstart');return false">Startpaket Dam</a><a href="#" onclick="openPDP('wrefill');return false">Refillpack Dam</a></div>
-    <div class="w-fc"><h4>Om biiw</h4><p class="w-fc-desc">Vi tror på enkelhet och ärlighet.</p><a href="#story">Vår historia</a><a href="#hur">Hur det fungerar</a><a href="#butiker">Här finns vi</a><a href="#kontakt">Kontakt</a></div>
-    <div class="w-fc"><h4>Kundservice</h4><p class="w-fc-desc">Svarar alltid inom ett dygn.</p><a href="#">Vanliga frågor</a><a href="#">Returpolicy</a><a href="#">Integritetspolicy</a><a href="#">Köpvillkor</a></div>
-  </div>
-  <div class="w-footer-bot"><span>© 2026 biiw AB · Stockholm</span><span>Designad med kärlek i Sverige </span></div>
-</footer>
+    <!-- WOMEN PRODUCTS -->
+    <section id="produkter" class="w-products">
+      <div class="w-prod-intro fi">
+        <div>
+          <div class="w-eye">Våra produkter</div>
+          <h2 class="w-h2">Två produkter.<br>Ett enkelt val.</h2>
+          <p>Vi tror på enkelhet. Startpaketet ger dig allt du behöver, och Refillpacket håller dig påfylld. Välj
+            frekvens och pausa när du vill.</p>
+        </div>
+        <div style="display:flex;justify-content:flex-end;align-items:flex-end">
+          <p class="w-prod-quote">"Det ska vara<br>enkelt att ta<br>hand om sig."</p>
+        </div>
+      </div>
+      <div class="w-prod-grid">
+        <div class="w-card fi" onclick="openPDP('wstart')">
+          <div class="w-card-img"><img src="images/dam-razor-1.jpg" alt="Startpaket"><span
+              class="w-pill w-pill-rose">Populärast</span></div>
+          <div class="w-card-body">
+            <div class="w-card-name">Startpaket Dam</div>
+            <div class="w-card-desc">Allt i ett paket för att börja din biiw-resa. Ergonomiskt handtag i tung
+              zinklegering och två 5-bladiga blad med fuktgivande gel-remsa. Välj din favoritfärg bland sju alternativ.
+            </div>
+            <div class="w-card-footer">
+              <div class="w-card-price">99 kr<small>inkl. moms</small></div>
+              <button class="w-card-btn" onclick="event.stopPropagation();openPDP('wstart')">Välj & köp →</button>
+            </div>
+          </div>
+        </div>
+        <div class="w-card fi" onclick="openPDP('wrefill')">
+          <div class="w-card-img olive"><img src="images/dam-razor-2.jpg" alt="Refillpack Dam"><span
+              class="w-pill w-pill-ink">Refill</span></div>
+          <div class="w-card-body">
+            <div class="w-card-name">Refillpack Dam</div>
+            <div class="w-card-desc">Fyra 5-bladiga rakblad med inbyggd aloe vera gel-remsa. Passar alla biiw-handtag
+              för damer. Välj hur ofta du vill få nya blad levererade hem.</div>
+            <div class="w-card-footer">
+              <div class="w-card-price">99 kr<small>4-pack</small></div>
+              <button class="w-card-btn" onclick="event.stopPropagation();openPDP('wrefill')">Välj & köp →</button>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
 
-</div><!-- /women main site -->
+    <!-- WOMEN GALLERY -->
+    <div class="w-gallery">
+      <div class="w-gal-grid">
+        <div class="w-gi"><img src="images/dam-razor-3.jpg" alt=""></div>
+        <div class="w-gi"><img src="images/dam-razor-1.jpg" alt=""></div>
+        <div class="w-gi"><img src="images/dam-razor-4.jpg" alt=""></div>
+        <div class="w-gi"><img src="images/dam-razor-5.jpg" alt=""></div>
+        <div class="w-gi"><img src="images/dam-razor-2.jpg" alt=""></div>
+      </div>
+    </div>
 
-<!-- ═══════════════════════════════════════════
+    <!-- WOMEN BUTIKER -->
+    <section id="butiker" class="w-butiker">
+      <div class="w-butiker-header" onclick="toggleCurtain('w')">
+        <div>
+          <div class="w-butiker-eye">Återförsäljare</div>
+          <div class="w-butiker-title">Här finns vi</div>
+        </div>
+        <div class="w-butiker-arrow" id="w-arrow">↓</div>
+      </div>
+      <div class="w-butiker-curtain" id="w-curtain">
+        <div class="w-butiker-inner">
+          <p class="w-butiker-intro">biiw finns att köpa i utvalda fysiska butiker runt om i Sverige.</p>
+          <div style="display:flex;flex-direction:column;gap:16px">
+            <div class="store-card"><img src="images/logo-hm.png" alt="H&M"></div>
+            <div class="store-card"><img src="images/logo-ahlens.png" alt="Åhléns"></div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- WOMEN STORY -->
+    <section id="story" class="w-story">
+      <div class="w-story-img"><img src="images/dam-razor-4.jpg" alt="biiw detalj"></div>
+      <div class="w-story-txt">
+        <div class="w-eye">Historien bakom biiw</div>
+        <h2 class="w-h2">Skapad ur<br>frustration –<br>och kärlek.</h2>
+        <p>Det började med en enkel fråga: varför kostar bra rakhyvlar så orimligt mycket? Vi letade, jämförde och
+          tröttnade på svaret. Så vi byggde vår egen.</p>
+        <p>biiw skapades i Stockholm med ett mål – att göra premium rakning tillgängligt för alla, utan kompromisser på
+          kvalitet, design eller känsla.</p>
+        <div class="w-vals">
+          <div class="w-val">
+            <h4>Tillgänglighet</h4>
+            <p>Premium kvalitet till ett pris alla har råd med – alltid 99 kr</p>
+          </div>
+          <div class="w-val">
+            <h4>Omsorg</h4>
+            <p>Varje produkt designad med din hud och vardag i åtanke</p>
+          </div>
+          <div class="w-val">
+            <h4>Hållbarhet</h4>
+            <p>Utbytbara blad, minimal förpackning, ansvarsfullt inköp</p>
+          </div>
+          <div class="w-val">
+            <h4>Ärlighet</h4>
+            <p>Inga dolda avgifter, inga bindningstider</p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- WOMEN HOW -->
+    <section id="hur" class="w-how">
+      <div class="fi">
+        <div class="w-eye">Hur det fungerar</div>
+        <h2 class="w-h2">Enkelt från start till leverans</h2>
+      </div>
+      <div class="w-how-grid">
+        <div class="fi">
+          <div class="w-how-num">01</div>
+          <div class="w-how-title">Välj din produkt</div>
+          <p class="w-how-desc">Börja med startpaketet för att få handtag och blad i ett, eller välj refillpack om du
+            redan har ett biiw-handtag. Välj färg och leveransfrekvens.</p>
+        </div>
+        <div class="fi">
+          <div class="w-how-num">02</div>
+          <div class="w-how-title">Vi skickar hem</div>
+          <p class="w-how-desc">Fri frakt direkt till din dörr. Prenumerationen skickas automatiskt med din valda
+            frekvens. Du får ett mejl innan varje utskick.</p>
+        </div>
+        <div class="fi">
+          <div class="w-how-num">03</div>
+          <div class="w-how-title">Raka med glädje</div>
+          <p class="w-how-desc">Ergonomiskt handtag, vassa blad och fuktgivande gel-remsa. Var 10e utskick gratis – helt
+            automatiskt.</p>
+        </div>
+      </div>
+    </section>
+
+    <!-- WOMEN CONTACT -->
+    <section id="kontakt" class="w-contact">
+      <div class="w-contact-wrap">
+        <div class="w-contact-left fi">
+          <div class="w-eye">Kontakt</div>
+          <h2 class="w-h2">Vi finns här för dig</h2>
+          <h3>Skriv till oss</h3>
+          <p>Har du frågor om produkten, din prenumeration, en retur eller bara vill säga hej? Vi läser varenda mejl och
+            svarar alltid inom ett dygn.</p>
+          <div class="w-kd">
+            <div class="w-kd-icon"><svg width="20" height="20" viewBox="0 0 20 20" fill="none"
+                xmlns="http://www.w3.org/2000/svg">
+                <rect x="2" y="4" width="16" height="12" rx="2" stroke="currentColor" stroke-width="1.4" />
+                <path d="M2 6L10 11L18 6" stroke="currentColor" stroke-width="1.4" stroke-linecap="round" />
+              </svg></div><span><a href="/cdn-cgi/l/email-protection" class="__cf_email__"
+                data-cfemail="0a626f604a6863637d24796f">[email&#160;protected]</a></span>
+          </div>
+          <div class="w-kd">
+            <div class="w-kd-icon"><svg width="20" height="20" viewBox="0 0 20 20" fill="none"
+                xmlns="http://www.w3.org/2000/svg">
+                <path d="M10 2C7.24 2 5 4.24 5 7C5 11 10 18 10 18C10 18 15 11 15 7C15 4.24 12.76 2 10 2Z"
+                  stroke="currentColor" stroke-width="1.4" stroke-linejoin="round" />
+                <circle cx="10" cy="7" r="2" stroke="currentColor" stroke-width="1.4" />
+              </svg></div><span>Stockholm, Sverige</span>
+          </div>
+          <div class="w-kd">
+            <div class="w-kd-icon"><svg width="20" height="20" viewBox="0 0 20 20" fill="none"
+                xmlns="http://www.w3.org/2000/svg">
+                <rect x="3" y="3" width="14" height="14" rx="4" stroke="currentColor" stroke-width="1.4" />
+                <circle cx="10" cy="10" r="3" stroke="currentColor" stroke-width="1.4" />
+                <circle cx="14.5" cy="5.5" r="1" fill="currentColor" />
+              </svg></div><span>@biiw.se på Instagram</span>
+          </div>
+        </div>
+        <form class="w-form fi" onsubmit="submitForm(event,'w')">
+          <div class="w-form-row">
+            <div class="w-fg"><label class="w-label">Namn</label><input class="w-input" type="text"
+                placeholder="Ditt namn" required></div>
+            <div class="w-fg"><label class="w-label">E-post</label><input class="w-input" type="email"
+                placeholder="din@email.se" required></div>
+          </div>
+          <div class="w-fg"><label class="w-label">Ämne</label><select class="w-input">
+              <option>Produktfråga</option>
+              <option>Min prenumeration</option>
+              <option>Retur</option>
+              <option>Samplingsamarbete</option>
+              <option>Investering</option>
+            </select></div>
+          <div class="w-fg"><label class="w-label">Meddelande</label><textarea class="w-input" style="min-height:120px"
+              placeholder="Berätta mer..."></textarea></div>
+          <button type="submit" class="btn-w-primary" style="align-self:flex-start">Skicka →</button>
+        </form>
+      </div>
+    </section>
+
+    <!-- WOMEN FOOTER -->
+    <footer class="w-footer">
+      <div class="w-footer-top">
+        <div class="w-footer-brand">
+          <div class="w-footer-logo">biiw</div>
+          <p>biiw skapades i Stockholm ur övertygelsen att bra rakhyvlar inte behöver kosta skjortan. Premium
+            tillgängligt för alla.</p>
+        </div>
+        <div class="w-fc">
+          <h4>Produkter</h4>
+          <p class="w-fc-desc">Två produkter, ett pris.</p><a href="#"
+            onclick="openPDP('wstart');return false">Startpaket Dam</a><a href="#"
+            onclick="openPDP('wrefill');return false">Refillpack Dam</a>
+        </div>
+        <div class="w-fc">
+          <h4>Om biiw</h4>
+          <p class="w-fc-desc">Vi tror på enkelhet och ärlighet.</p><a href="#story">Vår historia</a><a href="#hur">Hur
+            det fungerar</a><a href="#butiker">Här finns vi</a><a href="#kontakt">Kontakt</a>
+        </div>
+        <div class="w-fc">
+          <h4>Kundservice</h4>
+          <p class="w-fc-desc">Svarar alltid inom ett dygn.</p><a href="#">Vanliga frågor</a><a
+            href="#">Returpolicy</a><a href="#">Integritetspolicy</a><a href="#">Köpvillkor</a>
+        </div>
+      </div>
+      <div class="w-footer-bot"><span>© 2026 biiw AB · Stockholm</span><span>Designad med kärlek i Sverige </span></div>
+    </footer>
+
+  </div><!-- /women main site -->
+
+  <!-- ═══════════════════════════════════════════
   MEN MAIN SITE
 ══════════════════════════════════════════ -->
-<div id="men-site" class="men-section m-page" style="display:none">
+  <div id="men-site" class="men-section m-page" style="display:none">
 
-<!-- MEN HERO -->
-<section class="m-hero">
-  <div class="m-hero-left">
-    <div class="m-tag"><span class="m-tag-dot"></span>Svenskt kvalitetsstål · Stockholm</div>
-    <h1 class="m-h1">Precision.<br>Kraft. <em>Kontroll.</em><br><strong>Varje dag.</strong></h1>
-    <p class="m-sub">biiw Herr är utformad för den som kräver mer. Fem blad i marknadsledande kirurgiskt stål, balanserat handtag i zinklegering och en rakning som faktiskt gör skillnad.</p>
-    <div class="m-cta-row">
-      <button class="btn-m-primary" onclick="openPDP('mstart')">Välj startpaket</button>
-      <a href="#mhur" class="btn-m-text">Hur det fungerar →</a>
+    <!-- MEN HERO -->
+    <section class="m-hero">
+      <div class="m-hero-left">
+        <div class="m-tag"><span class="m-tag-dot"></span>Svenskt kvalitetsstål · Stockholm</div>
+        <h1 class="m-h1">Precision.<br>Kraft. <em>Kontroll.</em><br><strong>Varje dag.</strong></h1>
+        <p class="m-sub">biiw Herr är utformad för den som kräver mer. Fem blad i marknadsledande kirurgiskt stål,
+          balanserat handtag i zinklegering och en rakning som faktiskt gör skillnad.</p>
+        <div class="m-cta-row">
+          <button class="btn-m-primary" onclick="openPDP('mstart')">Välj startpaket</button>
+          <a href="#mhur" class="btn-m-text">Hur det fungerar →</a>
+        </div>
+        <div class="m-trust">
+          <div class="m-trust-item"><span></span><span>Marknads vassaste blad</span></div>
+          <div class="m-trust-item"><span></span><span>Kirurgiskt stål</span></div>
+          <div class="m-trust-item"><span></span><span>99 kr alltid</span></div>
+          <div class="m-trust-item"><span></span><span>CE-märkt</span></div>
+        </div>
+      </div>
+      <div class="m-hero-right" onclick="openPDP('mstart')">
+        <div class="m-hero-glow"></div>
+        <img src="images/herr-razor-1.jpg" alt="biiw herr startpaket">
+      </div>
+    </section>
+
+    <!-- MEN STRIP -->
+    <div class="m-strip">
+      <div class="m-strip-track">
+        <span>Kirurgiskt stål</span><span class="m-sep">·</span><span>Marknadens vassaste blad</span><span
+          class="m-sep">·</span><span>99 kr alltid</span><span class="m-sep">·</span><span>CE-märkt</span><span
+          class="m-sep">·</span><span>5-bladssystem</span><span class="m-sep">·</span><span>Balanserat
+          handtag</span><span class="m-sep">·</span><span>Var 10e utskick gratis</span><span class="m-sep">·</span>
+        <span>Kirurgiskt stål</span><span class="m-sep">·</span><span>Marknadens vassaste blad</span><span
+          class="m-sep">·</span><span>99 kr alltid</span><span class="m-sep">·</span><span>CE-märkt</span><span
+          class="m-sep">·</span><span>5-bladssystem</span><span class="m-sep">·</span><span>Balanserat
+          handtag</span><span class="m-sep">·</span><span>Var 10e utskick gratis</span><span class="m-sep">·</span>
+      </div>
     </div>
-    <div class="m-trust">
-      <div class="m-trust-item"><span></span><span>Marknads vassaste blad</span></div>
-      <div class="m-trust-item"><span></span><span>Kirurgiskt stål</span></div>
-      <div class="m-trust-item"><span></span><span>99 kr alltid</span></div>
-      <div class="m-trust-item"><span></span><span>CE-märkt</span></div>
+
+    <!-- MEN FEATURES -->
+    <div class="m-features">
+      <div class="m-feat fi">
+        <div class="m-feat-icon"><svg width="28" height="28" viewBox="0 0 28 28" fill="none"
+            xmlns="http://www.w3.org/2000/svg">
+            <path d="M7 21L21 7" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" />
+            <path d="M7 21L5 23L9 22L21 7L23 5L19 6L7 21Z" stroke="currentColor" stroke-width="1.4"
+              stroke-linejoin="round" />
+            <line x1="11" y1="17" x2="15" y2="13" stroke="currentColor" stroke-width="1" stroke-linecap="round" />
+          </svg></div>
+        <h3>Marknadens vassaste blad</h3>
+        <p>Våra blad håller en skärpa på 12–15° – branschens skarpaste vinkel. Resultatet är ett rent, precist drag utan
+          drag eller irritation.</p>
+      </div>
+      <div class="m-feat fi">
+        <div class="m-feat-icon"><svg width="28" height="28" viewBox="0 0 28 28" fill="none"
+            xmlns="http://www.w3.org/2000/svg">
+            <polygon points="14,4 22,10 22,18 14,24 6,18 6,10" stroke="currentColor" stroke-width="1.5"
+              stroke-linejoin="round" />
+            <line x1="6" y1="10" x2="22" y2="10" stroke="currentColor" stroke-width="1" />
+            <line x1="6" y1="18" x2="22" y2="18" stroke="currentColor" stroke-width="1" />
+            <line x1="14" y1="4" x2="14" y2="24" stroke="currentColor" stroke-width="1" />
+          </svg></div>
+        <h3>Kirurgiskt stål</h3>
+        <p>Bladen är tillverkade av svenskt kvalitetsstål med samma specifikation som kirurgiska instrument – extremt
+          slitstark och korrosionsfri.</p>
+      </div>
+      <div class="m-feat fi">
+        <div class="m-feat-icon"><svg width="28" height="28" viewBox="0 0 28 28" fill="none"
+            xmlns="http://www.w3.org/2000/svg">
+            <line x1="14" y1="5" x2="14" y2="23" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" />
+            <line x1="6" y1="9" x2="22" y2="9" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" />
+            <path d="M6 13C6 13 7 9 9 9C11 9 12 13 12 13" stroke="currentColor" stroke-width="1.3"
+              stroke-linecap="round" fill="none" />
+            <path d="M16 13C16 13 17 9 19 9C21 9 22 13 22 13" stroke="currentColor" stroke-width="1.3"
+              stroke-linecap="round" fill="none" />
+            <line x1="11" y1="23" x2="17" y2="23" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" />
+          </svg></div>
+        <h3>Balanserat handtag</h3>
+        <p>62g zinklegering, viktbalanserat mot bladhuvudet för maximal kontroll. Ergonomiskt grepp som håller även i
+          duschen.</p>
+      </div>
+      <div class="m-feat fi">
+        <div class="m-feat-icon"><svg width="28" height="28" viewBox="0 0 28 28" fill="none"
+            xmlns="http://www.w3.org/2000/svg">
+            <rect x="7" y="9" width="14" height="5" rx="2" stroke="currentColor" stroke-width="1.5" />
+            <path d="M14 14V22" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" />
+            <path d="M19 9L22 11.5L19 14" stroke="currentColor" stroke-width="1.3" stroke-linecap="round"
+              stroke-linejoin="round" />
+          </svg></div>
+        <h3>Flexibelt bladhuvud</h3>
+        <p>45° pivot-system som automatiskt anpassar bladet mot hudytan – perfekt för käklinjen, halsen och svårare
+          partier.</p>
+      </div>
     </div>
-  </div>
-  <div class="m-hero-right" onclick="openPDP('mstart')">
-    <div class="m-hero-glow"></div>
-    <img src="images/herr-razor-1.jpg" alt="biiw herr startpaket">
-  </div>
-</section>
-
-<!-- MEN STRIP -->
-<div class="m-strip">
-  <div class="m-strip-track">
-    <span>Kirurgiskt stål</span><span class="m-sep">·</span><span>Marknadens vassaste blad</span><span class="m-sep">·</span><span>99 kr alltid</span><span class="m-sep">·</span><span>CE-märkt</span><span class="m-sep">·</span><span>5-bladssystem</span><span class="m-sep">·</span><span>Balanserat handtag</span><span class="m-sep">·</span><span>Var 10e utskick gratis</span><span class="m-sep">·</span>
-    <span>Kirurgiskt stål</span><span class="m-sep">·</span><span>Marknadens vassaste blad</span><span class="m-sep">·</span><span>99 kr alltid</span><span class="m-sep">·</span><span>CE-märkt</span><span class="m-sep">·</span><span>5-bladssystem</span><span class="m-sep">·</span><span>Balanserat handtag</span><span class="m-sep">·</span><span>Var 10e utskick gratis</span><span class="m-sep">·</span>
-  </div>
-</div>
-
-<!-- MEN FEATURES -->
-<div class="m-features">
-  <div class="m-feat fi"><div class="m-feat-icon"><svg width="28" height="28" viewBox="0 0 28 28" fill="none" xmlns="http://www.w3.org/2000/svg"><path d="M7 21L21 7" stroke="currentColor" stroke-width="1.5" stroke-linecap="round"/><path d="M7 21L5 23L9 22L21 7L23 5L19 6L7 21Z" stroke="currentColor" stroke-width="1.4" stroke-linejoin="round"/><line x1="11" y1="17" x2="15" y2="13" stroke="currentColor" stroke-width="1" stroke-linecap="round"/></svg></div><h3>Marknadens vassaste blad</h3><p>Våra blad håller en skärpa på 12–15° – branschens skarpaste vinkel. Resultatet är ett rent, precist drag utan drag eller irritation.</p></div>
-  <div class="m-feat fi"><div class="m-feat-icon"><svg width="28" height="28" viewBox="0 0 28 28" fill="none" xmlns="http://www.w3.org/2000/svg"><polygon points="14,4 22,10 22,18 14,24 6,18 6,10" stroke="currentColor" stroke-width="1.5" stroke-linejoin="round"/><line x1="6" y1="10" x2="22" y2="10" stroke="currentColor" stroke-width="1"/><line x1="6" y1="18" x2="22" y2="18" stroke="currentColor" stroke-width="1"/><line x1="14" y1="4" x2="14" y2="24" stroke="currentColor" stroke-width="1"/></svg></div><h3>Kirurgiskt stål</h3><p>Bladen är tillverkade av svenskt kvalitetsstål med samma specifikation som kirurgiska instrument – extremt slitstark och korrosionsfri.</p></div>
-  <div class="m-feat fi"><div class="m-feat-icon"><svg width="28" height="28" viewBox="0 0 28 28" fill="none" xmlns="http://www.w3.org/2000/svg"><line x1="14" y1="5" x2="14" y2="23" stroke="currentColor" stroke-width="1.5" stroke-linecap="round"/><line x1="6" y1="9" x2="22" y2="9" stroke="currentColor" stroke-width="1.5" stroke-linecap="round"/><path d="M6 13C6 13 7 9 9 9C11 9 12 13 12 13" stroke="currentColor" stroke-width="1.3" stroke-linecap="round" fill="none"/><path d="M16 13C16 13 17 9 19 9C21 9 22 13 22 13" stroke="currentColor" stroke-width="1.3" stroke-linecap="round" fill="none"/><line x1="11" y1="23" x2="17" y2="23" stroke="currentColor" stroke-width="1.5" stroke-linecap="round"/></svg></div><h3>Balanserat handtag</h3><p>62g zinklegering, viktbalanserat mot bladhuvudet för maximal kontroll. Ergonomiskt grepp som håller även i duschen.</p></div>
-  <div class="m-feat fi"><div class="m-feat-icon"><svg width="28" height="28" viewBox="0 0 28 28" fill="none" xmlns="http://www.w3.org/2000/svg"><rect x="7" y="9" width="14" height="5" rx="2" stroke="currentColor" stroke-width="1.5"/><path d="M14 14V22" stroke="currentColor" stroke-width="1.5" stroke-linecap="round"/><path d="M19 9L22 11.5L19 14" stroke="currentColor" stroke-width="1.3" stroke-linecap="round" stroke-linejoin="round"/></svg></div><h3>Flexibelt bladhuvud</h3><p>45° pivot-system som automatiskt anpassar bladet mot hudytan – perfekt för käklinjen, halsen och svårare partier.</p></div>
-</div>
 
 
-<!-- MEN STEEL QUALITY -->
-<div class="m-steel-bar fi">
-  <div class="m-steel-text">
-    <div class="m-eye">Kvalitet</div>
-    <h3 class="m-h2" style="font-size:clamp(28px,3vw,40px);color:white">Inte bara ett löfte.<br>En specifikation.</h3>
-    <p>biiw herr-blad tillverkas av densamme legering som används i precisionskirurgi – en legering av stål, krom och vanadium som garanterar en konsekvent, extremt skarp egg med varje byte.</p>
-    <p style="margin-top:12px">Varje blad genomgår en 7-stegs kvalitetskontroll innan det lämnar fabriken. Om ett enda blad i ett pack inte uppfyller kraven kasseras hela batchen.</p>
-  </div>
-  <div class="m-steel-stats">
-    <div class="m-stat"><div class="m-stat-num">12°</div><div class="m-stat-label">Bladvinkel – marknadens skarpaste</div></div>
-    <div class="m-stat"><div class="m-stat-num">5×</div><div class="m-stat-label">Blad per huvud för slätare resultat</div></div>
-    <div class="m-stat"><div class="m-stat-num">7</div><div class="m-stat-label">Steg i kvalitetskontrollen</div></div>
-    <div class="m-stat"><div class="m-stat-num">62g</div><div class="m-stat-label">Handtagets optimala vikt</div></div>
-  </div>
-</div>
-
-<!-- MEN PRODUCTS -->
-<section id="mprodukter" class="m-products">
-  <div class="m-prod-intro fi">
-    <div>
-      <div class="m-eye">Våra produkter</div>
-      <h2 class="m-h2">Precision.<br>Inga kompromisser.</h2>
-      <p>Två produkter, ett pris. Startpaketet ger dig allt du behöver – refillpacket håller dig igång. Välj frekvens och låt oss sköta resten.</p>
-    </div>
-    <div style="display:flex;justify-content:flex-end;align-items:flex-end">
-      <p class="m-prod-quote">"Rakhyveln ska vara<br>ett verktyg värt<br>att respektera."</p>
-    </div>
-  </div>
-  <div class="m-prod-grid">
-    <div class="m-card fi" onclick="openPDP('mstart')">
-      <div class="m-card-img"><img src="images/herr-razor-1.jpg" alt="Startpaket Herr"><span class="m-pill m-pill-blue">Populärast</span></div>
-      <div class="m-card-body">
-        <div class="m-card-name">Startpaket Herr</div>
-        <div class="m-card-desc">Handtag i 62g zinklegering med balanserat grepp och två 5-bladiga blad i kirurgiskt stål. Bladhuvudets 45° pivot-system anpassar sig mot varje kontur. Välj bland silver och grafitgrå.</div>
-        <div class="m-card-footer">
-          <div class="m-card-price">99 kr<small>inkl. moms</small></div>
-          <button class="m-card-btn" onclick="event.stopPropagation();openPDP('mstart')">Välj & köp →</button>
+    <!-- MEN STEEL QUALITY -->
+    <div class="m-steel-bar fi">
+      <div class="m-steel-text">
+        <div class="m-eye">Kvalitet</div>
+        <h3 class="m-h2" style="font-size:clamp(28px,3vw,40px);color:white">Inte bara ett löfte.<br>En specifikation.
+        </h3>
+        <p>biiw herr-blad tillverkas av densamme legering som används i precisionskirurgi – en legering av stål, krom
+          och vanadium som garanterar en konsekvent, extremt skarp egg med varje byte.</p>
+        <p style="margin-top:12px">Varje blad genomgår en 7-stegs kvalitetskontroll innan det lämnar fabriken. Om ett
+          enda blad i ett pack inte uppfyller kraven kasseras hela batchen.</p>
+      </div>
+      <div class="m-steel-stats">
+        <div class="m-stat">
+          <div class="m-stat-num">12°</div>
+          <div class="m-stat-label">Bladvinkel – marknadens skarpaste</div>
+        </div>
+        <div class="m-stat">
+          <div class="m-stat-num">5×</div>
+          <div class="m-stat-label">Blad per huvud för slätare resultat</div>
+        </div>
+        <div class="m-stat">
+          <div class="m-stat-num">7</div>
+          <div class="m-stat-label">Steg i kvalitetskontrollen</div>
+        </div>
+        <div class="m-stat">
+          <div class="m-stat-num">62g</div>
+          <div class="m-stat-label">Handtagets optimala vikt</div>
         </div>
       </div>
     </div>
-    <div class="m-card fi" onclick="openPDP('mrefill')">
-      <div class="m-card-img"><img src="images/herr-razor-2.jpg" alt="Refillpack Herr"><span class="m-pill m-pill-steel">Refill</span></div>
-      <div class="m-card-body">
-        <div class="m-card-name">Refillpack Herr</div>
-        <div class="m-card-desc">Fyra 5-bladiga rakblad i kirurgiskt stål med precisionsskärpt egg. Varje blad testas individuellt för konsekvent skärpa. Passar alla biiw herr-handtag. Välj din leveransfrekvens.</div>
-        <div class="m-card-footer">
-          <div class="m-card-price">99 kr<small>4-pack</small></div>
-          <button class="m-card-btn" onclick="event.stopPropagation();openPDP('mrefill')">Välj & köp →</button>
+
+    <!-- MEN PRODUCTS -->
+    <section id="mprodukter" class="m-products">
+      <div class="m-prod-intro fi">
+        <div>
+          <div class="m-eye">Våra produkter</div>
+          <h2 class="m-h2">Precision.<br>Inga kompromisser.</h2>
+          <p>Två produkter, ett pris. Startpaketet ger dig allt du behöver – refillpacket håller dig igång. Välj
+            frekvens och låt oss sköta resten.</p>
+        </div>
+        <div style="display:flex;justify-content:flex-end;align-items:flex-end">
+          <p class="m-prod-quote">"Rakhyveln ska vara<br>ett verktyg värt<br>att respektera."</p>
         </div>
       </div>
-    </div>
-  </div>
-</section>
+      <div class="m-prod-grid">
+        <div class="m-card fi" onclick="openPDP('mstart')">
+          <div class="m-card-img"><img src="images/herr-razor-1.jpg" alt="Startpaket Herr"><span
+              class="m-pill m-pill-blue">Populärast</span></div>
+          <div class="m-card-body">
+            <div class="m-card-name">Startpaket Herr</div>
+            <div class="m-card-desc">Handtag i 62g zinklegering med balanserat grepp och två 5-bladiga blad i kirurgiskt
+              stål. Bladhuvudets 45° pivot-system anpassar sig mot varje kontur. Välj bland silver och grafitgrå.</div>
+            <div class="m-card-footer">
+              <div class="m-card-price">99 kr<small>inkl. moms</small></div>
+              <button class="m-card-btn" onclick="event.stopPropagation();openPDP('mstart')">Välj & köp →</button>
+            </div>
+          </div>
+        </div>
+        <div class="m-card fi" onclick="openPDP('mrefill')">
+          <div class="m-card-img"><img src="images/herr-razor-2.jpg" alt="Refillpack Herr"><span
+              class="m-pill m-pill-steel">Refill</span></div>
+          <div class="m-card-body">
+            <div class="m-card-name">Refillpack Herr</div>
+            <div class="m-card-desc">Fyra 5-bladiga rakblad i kirurgiskt stål med precisionsskärpt egg. Varje blad
+              testas individuellt för konsekvent skärpa. Passar alla biiw herr-handtag. Välj din leveransfrekvens.</div>
+            <div class="m-card-footer">
+              <div class="m-card-price">99 kr<small>4-pack</small></div>
+              <button class="m-card-btn" onclick="event.stopPropagation();openPDP('mrefill')">Välj & köp →</button>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
 
-<!-- MEN GALLERY -->
-<div class="m-gallery">
-  <div class="m-gal-grid">
-    <div class="m-gi"><img src="images/herr-razor-1.jpg" alt=""></div>
-    <div class="m-gi"><img src="images/herr-razor-3.jpg" alt=""></div>
-    <div class="m-gi"><img src="images/herr-razor-2.jpg" alt=""></div>
-    <div class="m-gi"><img src="images/logo-ahlens.png" alt=""></div>
-    <div class="m-gi"><img src="images/logo-hm.png" alt=""></div>
-  </div>
-</div>
-
-<!-- MEN BUTIKER -->
-<section id="mbutiker" class="m-butiker">
-  <div class="m-butiker-header" onclick="toggleCurtain('m')">
-    <div><div class="m-butiker-eye">Återförsäljare</div><div class="m-butiker-title">Här finns vi</div></div>
-    <div class="m-butiker-arrow" id="m-arrow">↓</div>
-  </div>
-  <div class="m-butiker-curtain" id="m-curtain">
-    <div class="m-butiker-inner">
-      <p class="m-butiker-intro">biiw Herr finns hos utvalda svenska återförsäljare.</p>
-      <div style="display:flex;flex-direction:column;gap:16px">
-        <div class="m-store-card"><img src="images/logo-hm.png" alt="H&M"></div>
-        <div class="m-store-card"><img src="images/logo-ahlens.png" alt="Åhléns"></div>
+    <!-- MEN GALLERY -->
+    <div class="m-gallery">
+      <div class="m-gal-grid">
+        <div class="m-gi"><img src="images/herr-razor-1.jpg" alt=""></div>
+        <div class="m-gi"><img src="images/herr-razor-3.jpg" alt=""></div>
+        <div class="m-gi"><img src="images/herr-razor-2.jpg" alt=""></div>
+        <div class="m-gi"><img src="images/logo-ahlens.png" alt=""></div>
+        <div class="m-gi"><img src="images/logo-hm.png" alt=""></div>
       </div>
     </div>
-  </div>
-</section>
 
-<!-- MEN STORY -->
-<section id="mstory" class="m-story">
-  <div class="m-story-img"><img src="images/logo-ahlens.png" alt="biiw herr detalj"></div>
-  <div class="m-story-txt">
-    <div class="m-eye">Historien bakom biiw Herr</div>
-    <h2 class="m-h2">Byggt för den<br>som kräver mer.</h2>
-    <p>Vi tröttnade på rakhyvlar som ser dyra ut men rakar dåligt. biiw Herr är svaret – precisionskonstruerat, balanserat och tillverkat i samma stålkvalitet som kirurgiska instrument.</p>
-    <p>Skapad i Stockholm för den moderna mannen som vet att en bra rakning börjar med rätt verktyg.</p>
-    <div class="m-vals">
-      <div class="m-val"><h4>Precision</h4><p>12° bladvinkel – marknadens skarpaste för ett rent, exakt drag</p></div>
-      <div class="m-val"><h4>Kvalitet</h4><p>Kirurgiskt stål med 7-stegs kvalitetskontroll per blad</p></div>
-      <div class="m-val"><h4>Enkelhet</h4><p>99 kr alltid – oavsett startpaket eller refill</p></div>
-      <div class="m-val"><h4>Hållbarhet</h4><p>Handtaget håller livet ut – byt bara bladet</p></div>
-    </div>
-  </div>
-</section>
-
-<!-- MEN HOW -->
-<section id="mhur" class="m-how">
-  <div class="fi"><div class="m-eye">Hur det fungerar</div><h2 class="m-h2">Enkelt. Precist. Klart.</h2></div>
-  <div class="m-how-grid">
-    <div class="fi"><div class="m-how-num">01</div><div class="m-how-title">Välj startpaket</div><p class="m-how-desc">Välj silver eller grafitgrå. Lägg till en prenumeration på refillblad med den frekvens som passar din rakningstakt – varje, varannan eller var tredje månad.</p></div>
-    <div class="fi"><div class="m-how-num">02</div><div class="m-how-title">Leverans till dörren</div><p class="m-how-desc">Fri frakt, direkt hem. Prenumerationen rullar automatiskt – du slipper tänka på det. Avbryt, pausa eller byt frekvens när du vill via ditt konto.</p></div>
-    <div class="fi"><div class="m-how-num">03</div><div class="m-how-title">Raka med precision</div><p class="m-how-desc">Känn skillnaden av ett blad som faktiskt är vasst. Var 10e utskick är gratis – lojalitetsprogrammet hanterar det automatiskt.</p></div>
-  </div>
-</section>
-
-<!-- MEN CONTACT -->
-<section class="m-contact">
-  <div class="m-contact-wrap">
-    <div class="m-contact-left fi">
-      <div class="m-eye">Kontakt</div>
-      <h2 class="m-h2">Hör av dig</h2>
-      <h3>Vi svarar inom 24 timmar</h3>
-      <p>Frågor om produkten, din prenumeration, återförsäljning eller investeringsmöjligheter – skriv till oss.</p>
-      <div class="m-kd"><div class="m-kd-icon"><svg width="20" height="20" viewBox="0 0 20 20" fill="none" xmlns="http://www.w3.org/2000/svg"><rect x="2" y="4" width="16" height="12" rx="2" stroke="currentColor" stroke-width="1.4"/><path d="M2 6L10 11L18 6" stroke="currentColor" stroke-width="1.4" stroke-linecap="round"/></svg></div><span><a href="/cdn-cgi/l/email-protection" class="__cf_email__" data-cfemail="6c0409062c0e05051b421f09">[email&#160;protected]</a></span></div>
-      <div class="m-kd"><div class="m-kd-icon"><svg width="20" height="20" viewBox="0 0 20 20" fill="none" xmlns="http://www.w3.org/2000/svg"><path d="M10 2C7.24 2 5 4.24 5 7C5 11 10 18 10 18C10 18 15 11 15 7C15 4.24 12.76 2 10 2Z" stroke="currentColor" stroke-width="1.4" stroke-linejoin="round"/><circle cx="10" cy="7" r="2" stroke="currentColor" stroke-width="1.4"/></svg></div><span>Stockholm, Sverige</span></div>
-      <div class="m-kd"><div class="m-kd-icon"><svg width="20" height="20" viewBox="0 0 20 20" fill="none" xmlns="http://www.w3.org/2000/svg"><rect x="3" y="3" width="14" height="14" rx="4" stroke="currentColor" stroke-width="1.4"/><circle cx="10" cy="10" r="3" stroke="currentColor" stroke-width="1.4"/><circle cx="14.5" cy="5.5" r="1" fill="currentColor"/></svg></div><span>@biiw.se på Instagram</span></div>
-    </div>
-    <form class="m-form fi" onsubmit="submitForm(event,'m')">
-      <div class="m-form-row">
-        <div class="m-fg"><label class="m-label">Namn</label><input class="m-input" type="text" placeholder="Ditt namn" required></div>
-        <div class="m-fg"><label class="m-label">E-post</label><input class="m-input" type="email" placeholder="din@email.se" required></div>
+    <!-- MEN BUTIKER -->
+    <section id="mbutiker" class="m-butiker">
+      <div class="m-butiker-header" onclick="toggleCurtain('m')">
+        <div>
+          <div class="m-butiker-eye">Återförsäljare</div>
+          <div class="m-butiker-title">Här finns vi</div>
+        </div>
+        <div class="m-butiker-arrow" id="m-arrow">↓</div>
       </div>
-      <div class="m-fg"><label class="m-label">Ämne</label><select class="m-input"><option>Produktfråga</option><option>Min prenumeration</option><option>Retur</option><option>Återförsäljning</option><option>Investering</option></select></div>
-      <div class="m-fg"><label class="m-label">Meddelande</label><textarea class="m-input" style="min-height:120px" placeholder="Berätta mer..."></textarea></div>
-      <button type="submit" class="btn-m-primary" style="align-self:flex-start">Skicka →</button>
-    </form>
-  </div>
-</section>
+      <div class="m-butiker-curtain" id="m-curtain">
+        <div class="m-butiker-inner">
+          <p class="m-butiker-intro">biiw Herr finns hos utvalda svenska återförsäljare.</p>
+          <div style="display:flex;flex-direction:column;gap:16px">
+            <div class="m-store-card"><img src="images/logo-hm.png" alt="H&M"></div>
+            <div class="m-store-card"><img src="images/logo-ahlens.png" alt="Åhléns"></div>
+          </div>
+        </div>
+      </div>
+    </section>
 
-<!-- MEN FOOTER -->
-<footer class="m-footer">
-  <div class="m-footer-top">
-    <div class="m-footer-brand"><div class="m-footer-logo">biiw</div><p>biiw Herr – precisionskonstruerade rakhyvlar i kirurgiskt stål. Skapad i Stockholm för den moderna mannen.</p></div>
-    <div class="m-fc"><h4>Produkter</h4><p class="m-fc-desc">Precision utan kompromisser.</p><a href="#" onclick="openPDP('mstart');return false">Startpaket Herr</a><a href="#" onclick="openPDP('mrefill');return false">Refillpack Herr</a></div>
-    <div class="m-fc"><h4>Om biiw</h4><p class="m-fc-desc">Kvalitet, enkelhet, ärlighet.</p><a href="#story">Vår historia</a><a href="#mhur">Hur det fungerar</a><a href="#butiker">Här finns vi</a><a href="#kontakt">Kontakt</a></div>
-    <div class="m-fc"><h4>Kundservice</h4><p class="m-fc-desc">Svarar alltid inom ett dygn.</p><a href="#">Vanliga frågor</a><a href="#">Returpolicy</a><a href="#">Integritetspolicy</a><a href="#">Köpvillkor</a></div>
-  </div>
-  <div class="m-footer-bot"><span>© 2026 biiw AB · Stockholm</span><span>Precision. Kvalitet. Stål. </span></div>
-</footer>
+    <!-- MEN STORY -->
+    <section id="mstory" class="m-story">
+      <div class="m-story-img"><img src="images/logo-ahlens.png" alt="biiw herr detalj"></div>
+      <div class="m-story-txt">
+        <div class="m-eye">Historien bakom biiw Herr</div>
+        <h2 class="m-h2">Byggt för den<br>som kräver mer.</h2>
+        <p>Vi tröttnade på rakhyvlar som ser dyra ut men rakar dåligt. biiw Herr är svaret – precisionskonstruerat,
+          balanserat och tillverkat i samma stålkvalitet som kirurgiska instrument.</p>
+        <p>Skapad i Stockholm för den moderna mannen som vet att en bra rakning börjar med rätt verktyg.</p>
+        <div class="m-vals">
+          <div class="m-val">
+            <h4>Precision</h4>
+            <p>12° bladvinkel – marknadens skarpaste för ett rent, exakt drag</p>
+          </div>
+          <div class="m-val">
+            <h4>Kvalitet</h4>
+            <p>Kirurgiskt stål med 7-stegs kvalitetskontroll per blad</p>
+          </div>
+          <div class="m-val">
+            <h4>Enkelhet</h4>
+            <p>99 kr alltid – oavsett startpaket eller refill</p>
+          </div>
+          <div class="m-val">
+            <h4>Hållbarhet</h4>
+            <p>Handtaget håller livet ut – byt bara bladet</p>
+          </div>
+        </div>
+      </div>
+    </section>
 
-</div><!-- /men site -->
+    <!-- MEN HOW -->
+    <section id="mhur" class="m-how">
+      <div class="fi">
+        <div class="m-eye">Hur det fungerar</div>
+        <h2 class="m-h2">Enkelt. Precist. Klart.</h2>
+      </div>
+      <div class="m-how-grid">
+        <div class="fi">
+          <div class="m-how-num">01</div>
+          <div class="m-how-title">Välj startpaket</div>
+          <p class="m-how-desc">Välj silver eller grafitgrå. Lägg till en prenumeration på refillblad med den frekvens
+            som passar din rakningstakt – varje, varannan eller var tredje månad.</p>
+        </div>
+        <div class="fi">
+          <div class="m-how-num">02</div>
+          <div class="m-how-title">Leverans till dörren</div>
+          <p class="m-how-desc">Fri frakt, direkt hem. Prenumerationen rullar automatiskt – du slipper tänka på det.
+            Avbryt, pausa eller byt frekvens när du vill via ditt konto.</p>
+        </div>
+        <div class="fi">
+          <div class="m-how-num">03</div>
+          <div class="m-how-title">Raka med precision</div>
+          <p class="m-how-desc">Känn skillnaden av ett blad som faktiskt är vasst. Var 10e utskick är gratis –
+            lojalitetsprogrammet hanterar det automatiskt.</p>
+        </div>
+      </div>
+    </section>
 
-<!-- ═══════════════════════════════════════════
+    <!-- MEN CONTACT -->
+    <section class="m-contact">
+      <div class="m-contact-wrap">
+        <div class="m-contact-left fi">
+          <div class="m-eye">Kontakt</div>
+          <h2 class="m-h2">Hör av dig</h2>
+          <h3>Vi svarar inom 24 timmar</h3>
+          <p>Frågor om produkten, din prenumeration, återförsäljning eller investeringsmöjligheter – skriv till oss.</p>
+          <div class="m-kd">
+            <div class="m-kd-icon"><svg width="20" height="20" viewBox="0 0 20 20" fill="none"
+                xmlns="http://www.w3.org/2000/svg">
+                <rect x="2" y="4" width="16" height="12" rx="2" stroke="currentColor" stroke-width="1.4" />
+                <path d="M2 6L10 11L18 6" stroke="currentColor" stroke-width="1.4" stroke-linecap="round" />
+              </svg></div><span><a href="/cdn-cgi/l/email-protection" class="__cf_email__"
+                data-cfemail="6c0409062c0e05051b421f09">[email&#160;protected]</a></span>
+          </div>
+          <div class="m-kd">
+            <div class="m-kd-icon"><svg width="20" height="20" viewBox="0 0 20 20" fill="none"
+                xmlns="http://www.w3.org/2000/svg">
+                <path d="M10 2C7.24 2 5 4.24 5 7C5 11 10 18 10 18C10 18 15 11 15 7C15 4.24 12.76 2 10 2Z"
+                  stroke="currentColor" stroke-width="1.4" stroke-linejoin="round" />
+                <circle cx="10" cy="7" r="2" stroke="currentColor" stroke-width="1.4" />
+              </svg></div><span>Stockholm, Sverige</span>
+          </div>
+          <div class="m-kd">
+            <div class="m-kd-icon"><svg width="20" height="20" viewBox="0 0 20 20" fill="none"
+                xmlns="http://www.w3.org/2000/svg">
+                <rect x="3" y="3" width="14" height="14" rx="4" stroke="currentColor" stroke-width="1.4" />
+                <circle cx="10" cy="10" r="3" stroke="currentColor" stroke-width="1.4" />
+                <circle cx="14.5" cy="5.5" r="1" fill="currentColor" />
+              </svg></div><span>@biiw.se på Instagram</span>
+          </div>
+        </div>
+        <form class="m-form fi" onsubmit="submitForm(event,'m')">
+          <div class="m-form-row">
+            <div class="m-fg"><label class="m-label">Namn</label><input class="m-input" type="text"
+                placeholder="Ditt namn" required></div>
+            <div class="m-fg"><label class="m-label">E-post</label><input class="m-input" type="email"
+                placeholder="din@email.se" required></div>
+          </div>
+          <div class="m-fg"><label class="m-label">Ämne</label><select class="m-input">
+              <option>Produktfråga</option>
+              <option>Min prenumeration</option>
+              <option>Retur</option>
+              <option>Återförsäljning</option>
+              <option>Investering</option>
+            </select></div>
+          <div class="m-fg"><label class="m-label">Meddelande</label><textarea class="m-input" style="min-height:120px"
+              placeholder="Berätta mer..."></textarea></div>
+          <button type="submit" class="btn-m-primary" style="align-self:flex-start">Skicka →</button>
+        </form>
+      </div>
+    </section>
+
+    <!-- MEN FOOTER -->
+    <footer class="m-footer">
+      <div class="m-footer-top">
+        <div class="m-footer-brand">
+          <div class="m-footer-logo">biiw</div>
+          <p>biiw Herr – precisionskonstruerade rakhyvlar i kirurgiskt stål. Skapad i Stockholm för den moderna mannen.
+          </p>
+        </div>
+        <div class="m-fc">
+          <h4>Produkter</h4>
+          <p class="m-fc-desc">Precision utan kompromisser.</p><a href="#"
+            onclick="openPDP('mstart');return false">Startpaket Herr</a><a href="#"
+            onclick="openPDP('mrefill');return false">Refillpack Herr</a>
+        </div>
+        <div class="m-fc">
+          <h4>Om biiw</h4>
+          <p class="m-fc-desc">Kvalitet, enkelhet, ärlighet.</p><a href="#story">Vår historia</a><a href="#mhur">Hur det
+            fungerar</a><a href="#butiker">Här finns vi</a><a href="#kontakt">Kontakt</a>
+        </div>
+        <div class="m-fc">
+          <h4>Kundservice</h4>
+          <p class="m-fc-desc">Svarar alltid inom ett dygn.</p><a href="#">Vanliga frågor</a><a
+            href="#">Returpolicy</a><a href="#">Integritetspolicy</a><a href="#">Köpvillkor</a>
+        </div>
+      </div>
+      <div class="m-footer-bot"><span>© 2026 biiw AB · Stockholm</span><span>Precision. Kvalitet. Stål. </span></div>
+    </footer>
+
+  </div><!-- /men site -->
+
+  <!-- ═══════════════════════════════════════════
   SHARED PDP PAGE
 ══════════════════════════════════════════ -->
-<div class="page" id="pdp-page">
-  <div class="pdp-nav" id="pdp-nav">
-    <button class="back-btn" onclick="closePDP()">← Tillbaka</button>
-    <div class="pdp-logo">biiw</div>
-    <button class="nav-cart" onclick="openCart()">
-      <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M6 2L3 6v14a2 2 0 002 2h14a2 2 0 002-2V6l-3-4z"/><line x1="3" y1="6" x2="21" y2="6"/><path d="M16 10a4 4 0 01-8 0"/></svg>
-      Kassa <span class="cart-badge" id="pdp-cart-count">0</span>
-    </button>
-  </div>
-  <div class="pdp-wrap">
-    <div class="pdp-gallery" id="pdp-gallery">
-      <div class="pdp-main-img">
-        <button class="pdp-prev" onclick="pdpPrev()">‹</button>
-        <img id="pdp-main-img" src="" alt="">
-        <button class="pdp-next" onclick="pdpNext()">›</button>
-      </div>
-      <div class="pdp-dots" id="pdp-dots"></div>
-      <div class="pdp-thumbs" id="pdp-thumbs"></div>
-    </div>
-    <div class="pdp-info" id="pdp-info"></div>
-  </div>
-  <div id="pdp-footer"></div>
-</div>
-
-<!-- CART -->
-<div id="cart-wrap" class="w-cart">
-  <div class="cart-overlay" id="cart-overlay" onclick="closeCart()"></div>
-  <div class="cart-drawer" id="cart-drawer">
-    <div class="cart-head"><h3>Din kassa</h3><button class="cart-close" onclick="closeCart()"></button></div>
-    <div class="cart-body" id="cart-body"><div class="cart-empty-st" id="cart-empty"><div></div><p>Din kassa är tom</p></div></div>
-    <div class="cart-foot">
-      <div class="ct-row"><span>Totalt</span><strong id="cart-total">0 kr</strong></div>
-      <p class="cart-fn">Fri frakt · Leverans 2–4 arbetsdagar</p>
-      <button class="btn-co" onclick="goCheckout()">
-        <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="1" y="4" width="22" height="16" rx="2"/><line x1="1" y1="10" x2="23" y2="10"/></svg>
-        Till kassan
+  <div class="page" id="pdp-page">
+    <div class="pdp-nav" id="pdp-nav">
+      <button class="back-btn" onclick="closePDP()">← Tillbaka</button>
+      <div class="pdp-logo">biiw</div>
+      <button class="nav-cart" onclick="openCart()">
+        <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"
+          stroke-linecap="round" stroke-linejoin="round">
+          <path d="M6 2L3 6v14a2 2 0 002 2h14a2 2 0 002-2V6l-3-4z" />
+          <line x1="3" y1="6" x2="21" y2="6" />
+          <path d="M16 10a4 4 0 01-8 0" />
+        </svg>
+        Kassa <span class="cart-badge" id="pdp-cart-count">0</span>
       </button>
-      <div class="cart-ssl"> Säker betalning · SSL-krypterad</div>
+    </div>
+    <div class="pdp-wrap">
+      <div class="pdp-gallery" id="pdp-gallery">
+        <div class="pdp-main-img">
+          <button class="pdp-prev" onclick="pdpPrev()">‹</button>
+          <img id="pdp-main-img" src="" alt="">
+          <button class="pdp-next" onclick="pdpNext()">›</button>
+        </div>
+        <div class="pdp-dots" id="pdp-dots"></div>
+        <div class="pdp-thumbs" id="pdp-thumbs"></div>
+      </div>
+      <div class="pdp-info" id="pdp-info"></div>
+    </div>
+    <div id="pdp-footer"></div>
+  </div>
+
+  <!-- CART -->
+  <div id="cart-wrap" class="w-cart">
+    <div class="cart-overlay" id="cart-overlay" onclick="closeCart()"></div>
+    <div class="cart-drawer" id="cart-drawer">
+      <div class="cart-head">
+        <h3>Din kassa</h3><button class="cart-close" onclick="closeCart()"></button>
+      </div>
+      <div class="cart-body" id="cart-body">
+        <div class="cart-empty-st" id="cart-empty">
+          <div></div>
+          <p>Din kassa är tom</p>
+        </div>
+      </div>
+      <div class="cart-foot">
+        <div class="ct-row"><span>Totalt</span><strong id="cart-total">0 kr</strong></div>
+        <p class="cart-fn">Fri frakt · Leverans 2–4 arbetsdagar</p>
+        <button class="btn-co" onclick="goCheckout()">
+          <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"
+            stroke-linecap="round" stroke-linejoin="round">
+            <rect x="1" y="4" width="22" height="16" rx="2" />
+            <line x1="1" y1="10" x2="23" y2="10" />
+          </svg>
+          Till kassan
+        </button>
+        <div class="cart-ssl"> Säker betalning · SSL-krypterad</div>
+      </div>
     </div>
   </div>
-</div>
 
-<!-- CHECKOUT -->
-<div class="checkout-page w-co" id="checkout-page">
-  <div class="co-nav"><button class="back-btn" onclick="closeCheckout()">← Tillbaka</button><div class="co-logo">biiw</div><div style="width:120px"></div></div>
-  <div class="co-wrap">
-    <div class="co-left">
-      <h2>Slutför din beställning</h2>
-      <div class="co-section">
-        <h3><span class="step-num">1</span>Leveransuppgifter</h3>
-        <div class="g2" style="margin-bottom:14px"><div class="co-field"><label>Förnamn</label><input id="co-fn" type="text" placeholder="Förnamn"></div><div class="co-field"><label>Efternamn</label><input id="co-ln" type="text" placeholder="Efternamn"></div></div>
-        <div class="co-field" style="margin-bottom:14px"><label>E-post</label><input id="co-em" type="email" placeholder="din@email.se"></div>
-        <div class="co-field" style="margin-bottom:14px"><label>Telefon</label><input id="co-ph" type="tel" placeholder="070 000 00 00"></div>
-        <div class="co-field" style="margin-bottom:14px"><label>Adress</label><input id="co-ad" type="text" placeholder="Storgatan 1"></div>
-        <div class="g3"><div class="co-field"><label>Postnummer</label><input id="co-zip" type="text" placeholder="111 22"></div><div class="co-field" style="grid-column:span 2"><label>Stad</label><input id="co-city" type="text" placeholder="Stockholm"></div></div>
-      </div>
-      <div class="co-section">
-        <h3><span class="step-num">2</span>Leveranssätt</h3>
-        <div class="del-opts">
-          <label class="del-opt sel" onclick="setDelivery(this,0)"><input type="radio" name="del" checked><div class="del-info"><div class="del-name">Standardleverans</div><div class="del-time">2–4 arbetsdagar · PostNord</div></div><div class="del-price">Gratis</div></label>
-          <label class="del-opt" onclick="setDelivery(this,49)"><input type="radio" name="del"><div class="del-info"><div class="del-name">Expressleverans</div><div class="del-time">1–2 arbetsdagar · DHL</div></div><div class="del-price">49 kr</div></label>
+  <!-- CHECKOUT -->
+  <div class="checkout-page w-co" id="checkout-page">
+    <div class="co-nav"><button class="back-btn" onclick="closeCheckout()">← Tillbaka</button>
+      <div class="co-logo">biiw</div>
+      <div style="width:120px"></div>
+    </div>
+    <div class="co-wrap">
+      <div class="co-left">
+        <h2>Slutför din beställning</h2>
+        <div class="co-section">
+          <h3><span class="step-num">1</span>Leveransuppgifter</h3>
+          <div class="g2" style="margin-bottom:14px">
+            <div class="co-field"><label>Förnamn</label><input id="co-fn" type="text" placeholder="Förnamn"></div>
+            <div class="co-field"><label>Efternamn</label><input id="co-ln" type="text" placeholder="Efternamn"></div>
+          </div>
+          <div class="co-field" style="margin-bottom:14px"><label>E-post</label><input id="co-em" type="email"
+              placeholder="din@email.se"></div>
+          <div class="co-field" style="margin-bottom:14px"><label>Telefon</label><input id="co-ph" type="tel"
+              placeholder="070 000 00 00"></div>
+          <div class="co-field" style="margin-bottom:14px"><label>Adress</label><input id="co-ad" type="text"
+              placeholder="Storgatan 1"></div>
+          <div class="g3">
+            <div class="co-field"><label>Postnummer</label><input id="co-zip" type="text" placeholder="111 22"></div>
+            <div class="co-field" style="grid-column:span 2"><label>Stad</label><input id="co-city" type="text"
+                placeholder="Stockholm"></div>
+          </div>
+        </div>
+        <div class="co-section">
+          <h3><span class="step-num">2</span>Leveranssätt</h3>
+          <div class="del-opts">
+            <label class="del-opt sel" onclick="setDelivery(this,0)"><input type="radio" name="del" checked>
+              <div class="del-info">
+                <div class="del-name">Standardleverans</div>
+                <div class="del-time">2–4 arbetsdagar · PostNord</div>
+              </div>
+              <div class="del-price">Gratis</div>
+            </label>
+            <label class="del-opt" onclick="setDelivery(this,49)"><input type="radio" name="del">
+              <div class="del-info">
+                <div class="del-name">Expressleverans</div>
+                <div class="del-time">1–2 arbetsdagar · DHL</div>
+              </div>
+              <div class="del-price">49 kr</div>
+            </label>
+          </div>
+        </div>
+        <div class="co-section">
+          <h3><span class="step-num">3</span>Betalsätt</h3>
+          <div class="pay-grid">
+            <div class="pay-opt sel" onclick="setPay(this,'card')">
+              <div class="pay-icon"></div>
+              <div class="pay-name">Kort</div>
+            </div>
+            <div class="pay-opt" onclick="setPay(this,'swish')">
+              <div class="pay-icon"></div>
+              <div class="pay-name">Swish</div>
+            </div>
+            <div class="pay-opt" onclick="setPay(this,'klarna')">
+              <div class="pay-icon"></div>
+              <div class="pay-name">Klarna</div>
+            </div>
+          </div>
+          <div class="card-fs show" id="card-fs">
+            <div class="co-field"><label>Kortnummer</label><input type="text" placeholder="1234 5678 9012 3456"
+                maxlength="19" oninput="fmtCard(this)"></div>
+            <div class="g2">
+              <div class="co-field"><label>Utgångsdatum</label><input type="text" placeholder="MM/ÅÅ" maxlength="5"
+                  oninput="fmtExp(this)"></div>
+              <div class="co-field"><label>CVV</label><input type="text" placeholder="123" maxlength="3"></div>
+            </div>
+            <div class="co-field"><label>Kortinnehavare</label><input type="text" placeholder="NAMN NAMNSSON"></div>
+          </div>
+          <div id="swish-fs" style="display:none">
+            <div class="co-field" style="margin-top:16px"><label>Mobilnummer</label><input type="tel"
+                placeholder="070 000 00 00"></div>
+          </div>
+          <div id="klarna-fs" style="display:none">
+            <p style="font-size:14px;padding:16px 0;line-height:1.7;opacity:0.7">Betala nu eller senare med Klarna.</p>
+          </div>
         </div>
       </div>
-      <div class="co-section">
-        <h3><span class="step-num">3</span>Betalsätt</h3>
-        <div class="pay-grid">
-          <div class="pay-opt sel" onclick="setPay(this,'card')"><div class="pay-icon"></div><div class="pay-name">Kort</div></div>
-          <div class="pay-opt" onclick="setPay(this,'swish')"><div class="pay-icon"></div><div class="pay-name">Swish</div></div>
-          <div class="pay-opt" onclick="setPay(this,'klarna')"><div class="pay-icon"></div><div class="pay-name">Klarna</div></div>
-        </div>
-        <div class="card-fs show" id="card-fs">
-          <div class="co-field"><label>Kortnummer</label><input type="text" placeholder="1234 5678 9012 3456" maxlength="19" oninput="fmtCard(this)"></div>
-          <div class="g2"><div class="co-field"><label>Utgångsdatum</label><input type="text" placeholder="MM/ÅÅ" maxlength="5" oninput="fmtExp(this)"></div><div class="co-field"><label>CVV</label><input type="text" placeholder="123" maxlength="3"></div></div>
-          <div class="co-field"><label>Kortinnehavare</label><input type="text" placeholder="NAMN NAMNSSON"></div>
-        </div>
-        <div id="swish-fs" style="display:none"><div class="co-field" style="margin-top:16px"><label>Mobilnummer</label><input type="tel" placeholder="070 000 00 00"></div></div>
-        <div id="klarna-fs" style="display:none"><p style="font-size:14px;padding:16px 0;line-height:1.7;opacity:0.7">Betala nu eller senare med Klarna.</p></div>
+      <div class="os" id="order-summary">
+        <h3>Din beställning</h3>
+        <div id="os-items"></div>
+        <div class="os-div"></div>
+        <div class="os-row"><span>Delsumma</span><span id="os-sub">0 kr</span></div>
+        <div class="os-row"><span>Frakt</span><span id="os-ship">Gratis</span></div>
+        <div class="os-row"><span>Moms (25%)</span><span id="os-tax">ingår</span></div>
+        <div class="os-total"><span>Totalt att betala</span><strong id="os-tot">0 kr</strong></div><button
+          class="btn-place" onclick="placeOrder()"><svg width="18" height="18" viewBox="0 0 24 24" fill="none"
+            stroke="currentColor" stroke-width="2">
+            <polyline points="20 6 9 17 4 12" />
+          </svg>Lägg beställning</button>
+        <div class="ssl-note"> Säker & krypterad betalning · PCI DSS</div>
       </div>
     </div>
-    <div class="os" id="order-summary"><h3>Din beställning</h3><div id="os-items"></div><div class="os-div"></div><div class="os-row"><span>Delsumma</span><span id="os-sub">0 kr</span></div><div class="os-row"><span>Frakt</span><span id="os-ship">Gratis</span></div><div class="os-row"><span>Moms (25%)</span><span id="os-tax">ingår</span></div><div class="os-total"><span>Totalt att betala</span><strong id="os-tot">0 kr</strong></div><button class="btn-place" onclick="placeOrder()"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="20 6 9 17 4 12"/></svg>Lägg beställning</button><div class="ssl-note"> Säker & krypterad betalning · PCI DSS</div></div>
   </div>
-</div>
 
-<!-- CONFIRM -->
-<div class="confirm-pg w-conf" id="confirm-pg">
-  <div class="confirm-box"><div class="ci-anim"></div><h2>Tack för din beställning!</h2><p>Din beställning är bekräftad och skickas inom 1–2 arbetsdagar.</p><div class="confirm-num" id="confirm-num">Order #BIIW-0000</div><button id="confirm-btn" class="btn-w-primary" onclick="backToShop()">Fortsätt shoppa →</button></div>
-</div>
+  <!-- CONFIRM -->
+  <div class="confirm-pg w-conf" id="confirm-pg">
+    <div class="confirm-box">
+      <div class="ci-anim"></div>
+      <h2>Tack för din beställning!</h2>
+      <p>Din beställning är bekräftad och skickas inom 1–2 arbetsdagar.</p>
+      <div class="confirm-num" id="confirm-num">Order #BIIW-0000</div><button id="confirm-btn" class="btn-w-primary"
+        onclick="backToShop()">Fortsätt shoppa →</button>
+    </div>
+  </div>
 
-<!-- TOASTS -->
-<div class="toast w-toast" id="toast-w"><div class="toast-dot"></div><span id="toast-msg-w"></span></div>
-<div class="toast m-toast" id="toast-m" style="display:none"><div class="toast-dot"></div><span id="toast-msg-m"></span></div>
+  <!-- TOASTS -->
+  <div class="toast w-toast" id="toast-w">
+    <div class="toast-dot"></div><span id="toast-msg-w"></span>
+  </div>
+  <div class="toast m-toast" id="toast-m" style="display:none">
+    <div class="toast-dot"></div><span id="toast-msg-m"></span>
+  </div>
 
-<script data-cfasync="false" src="/cdn-cgi/scripts/5c5dd728/cloudflare-static/email-decode.min.js"></script><script src="js/main.js"></script>
+  <script data-cfasync="false" src="/cdn-cgi/scripts/5c5dd728/cloudflare-static/email-decode.min.js"></script>
+  <script src="js/main.js"></script>
 
 </body>
+
 </html>
