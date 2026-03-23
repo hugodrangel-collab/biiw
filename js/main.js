@@ -48,10 +48,8 @@ const FREQS=[{name:'Varje månad',sub:'4 nya rakblad levereras varje månad',sav
 
 // Image map – replaced by Python
 const IMG_MAP = {
-  // Mapped to file paths
   W1:'images/dam-razor-1.jpg',W2:'images/dam-razor-2.jpg',W3:'images/dam-razor-3.jpg',W4:'images/dam-razor-4.jpg',W5:'images/dam-razor-5.jpg',
-  M1:'images/herr-razor-4.jpg',M2:'images/herr-razor-5.jpg',M3:'images/herr-razor-1.jpg',M4:'images/herr-razor-2.jpg',M5:'images/herr-razor-3.jpg'
-
+  M1:'images/herr-razor-1.jpg',M2:'images/herr-razor-2.jpg',M3:'images/herr-razor-3.jpg',M4:'images/herr-razor-4.jpg',M5:'images/herr-razor-5.jpg',
   CW_ROSA:'images/color-rose.jpg',
   CW_LAVENDEL:'images/color-lavendel.jpg',
   CW_FOREST:'images/color-forest.jpg',
