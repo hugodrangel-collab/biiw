@@ -53,6 +53,8 @@ const IMG_MAP = {
   CW_ROSA:'images/color-rose.jpg',
   CW_LAVENDEL:'images/color-lavendel.jpg',
   CW_FOREST:'images/color-forest.jpg',
+  REFILL_DAM_1:'images/refill-dam-1.jpg',
+  REFILL_DAM_2:'images/refill-dam-2.jpg',
 };
 function img(k){return IMG_MAP[k]}
 
