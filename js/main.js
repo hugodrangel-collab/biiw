@@ -162,6 +162,37 @@ function setPdpImg(i){pdpImgIdx=i;const im=document.getElementById('pdp-main-img
 function pdpPrev(){setPdpImg((pdpImgIdx-1+pdpImages.length)%pdpImages.length)}
 function pdpNext(){setPdpImg((pdpImgIdx+1)%pdpImages.length)}
 
+
+function addFromPDP(){
+  if(!currentPDP) return;
+  var p=currentPDP;
+  var key=p.id+'-'+pdpColor+'-'+pdpFreq;
+  var existing=cart.find(function(i){return i.key===key;});
+  if(existing){
+    existing.qty+=pdpQty;
+  } else {
+    // Get image for current color
+    var imgSrc=pdpImages[0];
+    if(pdpColor && p.colors){
+      var col=p.colors.find(function(c){return c.name===pdpColor;});
+      if(col && col.img && IMG_MAP[col.img]) imgSrc=IMG_MAP[col.img];
+    }
+    cart.push({
+      key:key,
+      id:p.id,
+      name:p.name,
+      color:pdpColor,
+      freq:pdpFreq,
+      price:p.price,
+      qty:pdpQty,
+      img:imgSrc
+    });
+  }
+  updateCartUI();
+  showToast('Lagd i kassan!');
+  // Open cart drawer
+  setTimeout(function(){openCart();},400);
+}
 function pickFreq(el, freqName){
   document.querySelectorAll('.freq-opt.sel').forEach(function(e){e.classList.remove('sel');});
   el.classList.add('sel');
@@ -178,11 +209,11 @@ function pickColor(el){
   if(prod && prod.colors){
     var col=prod.colors.find(function(c){return c.name===colorName;});
     if(col && col.img && IMG_MAP[col.img]){
-      var mainImg=document.querySelector('.pdp-gallery .pdp-main-img');
+      var mainImg=document.getElementById('pdp-main-img');
       if(mainImg) mainImg.src=IMG_MAP[col.img];
       // Update first thumbnail too
       var firstThumb=document.querySelector('.pdp-thumb');
-      if(firstThumb) firstThumb.src=IMG_MAP[col.img];
+      if(firstThumb){firstThumb.src=IMG_MAP[col.img];pdpImages[0]=IMG_MAP[col.img];}
     }
   }
 }
