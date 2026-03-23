@@ -16,7 +16,7 @@ const PRODUCTS = {
     id:'wrefill',gender:'w',name:'Refillpack Dam',galClass:'w-gal',infoClass:'w-info',
     tagline:'Fyra 5-bladiga rakblad med inbyggd aloe vera gel-remsa. Passar alla biiw dam-handtag. Välj hur ofta du vill få nya blad levererade hem.',
     price:99,priceNote:'4-pack · inkl. 25% moms',freeClass:'free-w',
-    images:['W5','W4','W2','W3','W1'],
+    images:['REFILL_DAM_1','REFILL_DAM_2','W4','W5'],
     hasColor:false,hasFreq:true,colors:[],
     specs:[['Antal blad','4 st'],['Bladtyp','5-bladssystem'],['Material','Rostfritt stål'],['Gel-remsa','Aloe vera & vitamin E'],['Passar','Alla biiw dam-handtag'],['Förpackning','Återvinningsbar kartong']],
     features:[['Premium blad i rostfritt stål','Varje blad tillverkat med hög precision för en jämn, nära rakning.'],['Inbyggd aloe vera gel-remsa','Fuktgivande skydd direkt på bladet – aktiveras av vatten.'],['Enkel bladväxling','Tryck fast det nya bladet tills det klickar – inga verktyg behövs.'],['Passar alla biiw dam-handtag','Helt kompatibelt oavsett färg eller inköpsdatum.']],
