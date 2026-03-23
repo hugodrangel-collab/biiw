@@ -98,6 +98,7 @@ function openPDP(id){
   pdpColor=currentPDP.colors.length?currentPDP.colors[0].name:'';
   pdpFreq='Varje månad';pdpQty=1;
   renderPDP();
+  renderPDPFooter(g);
   const pdpNav=document.getElementById('pdp-nav');
   pdpNav.className='pdp-nav '+(g==='w'?'w-pdp-nav':'m-pdp-nav');
   document.getElementById('pdp-page').style.background=g==='w'?'var(--w-bg)':'var(--m-bg)';
@@ -105,6 +106,32 @@ function openPDP(id){
   document.getElementById('main-site').style.display='none';
   document.getElementById('men-site').style.display='none';
   window.scrollTo(0,0);
+}
+
+function renderPDPFooter(g){
+  const el=document.getElementById('pdp-footer');
+  if(!el) return;
+  if(g==='w'){
+    el.innerHTML=`<footer class="w-footer">
+  <div class="w-footer-top">
+    <div class="w-footer-brand"><div class="w-footer-logo">biiw</div><p>biiw skapades i Stockholm ur övertygelsen att bra rakhyvlar inte behöver kosta skjortan. Premium tillgängligt för alla.</p></div>
+    <div class="w-fc"><h4>Produkter</h4><p class="w-fc-desc">Två produkter, ett pris.</p><a href="#" onclick="openPDP('wstart');return false">Startpaket Dam</a><a href="#" onclick="openPDP('wrefill');return false">Refillpack Dam</a></div>
+    <div class="w-fc"><h4>Om biiw</h4><p class="w-fc-desc">Vi tror på enkelhet och ärlighet.</p><a href="#" onclick="closePDP();return false">Vår historia</a><a href="#" onclick="closePDP();return false">Hur det fungerar</a><a href="#" onclick="closePDP();return false">Här finns vi</a><a href="#" onclick="closePDP();return false">Kontakt</a></div>
+    <div class="w-fc"><h4>Kundservice</h4><p class="w-fc-desc">Svarar alltid inom ett dygn.</p><a href="#">Vanliga frågor</a><a href="#">Returpolicy</a><a href="#">Integritetspolicy</a><a href="#">Köpvillkor</a></div>
+  </div>
+  <div class="w-footer-bot"><span>© 2026 biiw AB · Stockholm</span><span>Designad med kärlek i Sverige </span></div>
+</footer>`;
+  } else {
+    el.innerHTML=`<footer class="m-footer">
+  <div class="m-footer-top">
+    <div class="m-footer-brand"><div class="m-footer-logo">biiw</div><p>biiw Herr – precisionskonstruerade rakhyvlar i kirurgiskt stål. Skapad i Stockholm för den moderna mannen.</p></div>
+    <div class="m-fc"><h4>Produkter</h4><p class="m-fc-desc">Precision utan kompromisser.</p><a href="#" onclick="openPDP('mstart');return false">Startpaket Herr</a><a href="#" onclick="openPDP('mrefill');return false">Refillpack Herr</a></div>
+    <div class="m-fc"><h4>Om biiw</h4><p class="m-fc-desc">Kvalitet, enkelhet, ärlighet.</p><a href="#" onclick="closePDP();return false">Vår historia</a><a href="#" onclick="closePDP();return false">Hur det fungerar</a><a href="#" onclick="closePDP();return false">Här finns vi</a><a href="#" onclick="closePDP();return false">Kontakt</a></div>
+    <div class="m-fc"><h4>Kundservice</h4><p class="m-fc-desc">Svarar alltid inom ett dygn.</p><a href="#">Vanliga frågor</a><a href="#">Returpolicy</a><a href="#">Integritetspolicy</a><a href="#">Köpvillkor</a></div>
+  </div>
+  <div class="m-footer-bot"><span>© 2026 biiw AB · Stockholm</span><span>Precision. Kvalitet. Stål. </span></div>
+</footer>`;
+  }
 }
 function closePDP(){
   document.getElementById('pdp-page').classList.remove('open');
