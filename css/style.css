@@ -2270,10 +2270,13 @@ body.men-mode .men-section {
 }
 
 .pdp-main-img img {
-   max-width: 100%;
-   max-height: 100%;
+   max-width: 88%;
+   max-height: 88%;
    object-fit: contain;
    transition: opacity 0.3s;
+   background: #ffffff;
+   padding: 24px;
+   box-shadow: 0 18px 40px rgba(0, 0, 0, 0.08);
 }
 
 .w-gal .pdp-main-img img {
