@@ -2653,7 +2653,7 @@ body.men-mode .men-section {
 .w-info .freq-opt:hover,
 .w-info .freq-opt.sel {
    border-color: var(--w-accent);
-   background: var(--w-accent-pale)
+   background: rgba(232, 64, 138, 0.02);
 }
 
 .m-info .freq-opt:hover,

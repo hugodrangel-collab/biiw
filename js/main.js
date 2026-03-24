@@ -51,7 +51,13 @@ const PRODUCTS = {
     reviews: [{ name: 'Daniel A.', stars: 5, text: 'Bladen håller vad de lovar. Varje utbyte känns som att raka med ett nytt instrument.' }, { name: 'Mikael T.', stars: 5, text: 'Prenumerationen fungerar perfekt. Aldrig en tanke på att beställa – det bara dyker upp.' }, { name: 'Oskar B.', stars: 4, text: 'Kvaliteten är konsekvent hög. Precis som ett herr-blad ska vara.' }]
   }
 };
-const FREQS = [{ name: 'Varje månad', sub: '4 nya rakblad levereras varje månad', save: '', type: 'sub' }, { name: 'Varannan månad', sub: '4 nya rakblad var 8:e vecka · Populärast', save: 'Populärast', type: 'sub' }, { name: 'Var 3:e månad', sub: '4 nya rakblad 4 gånger per år', save: '', type: 'sub' }, { name: 'Engångsköp', sub: 'Inget abonnemang – betala en gång', save: '', type: 'once' }];
+
+const FREQS = [
+  { name: 'Varje månad', sub: '4st nya rakblad levereras varje månad' },
+  { name: 'Var 6:e vecka', sub: '4st nya rakblad var 6:e vecka', popular: true },
+  { name: 'Varannan månad', sub: '4st nya rakblad var 8:e vecka' },
+  { name: 'Var 3:e månad', sub: '4st nya rakblad 4 gånger per år' }
+];
 
 // Image map – replaced by Python
 const IMG_MAP = {
@@ -212,16 +218,22 @@ function renderPDP() {
   const freqHtml = p.hasFreq ? (function () {
     var rows = '';
     for (var i = 0; i < FREQS.length; i++) {
-      if (i === 3) rows += '<div style="margin:16px 0 8px;font-size:11px;letter-spacing:1.5px;text-transform:uppercase;color:#aaa;display:flex;align-items:center;gap:10px"><span style="flex:1;height:1px;background:#ddd"></span>Eller<span style="flex:1;height:1px;background:#ddd"></span></div>';
       rows += '<div class="freq-opt' + (i === 1 ? ' sel' : '') + '" data-freq="' + FREQS[i].name + '" onclick="pickFreq(this,this.dataset.freq)">';
-      rows += '<div class="freq-radio"></div><div class="freq-info"><div class="freq-name">' + FREQS[i].name + (FREQS[i].save ? ' <span class="freq-save">' + FREQS[i].save + '</span>' : '') + '</div>';
-      rows += '<div class="freq-sub">' + FREQS[i].sub + '</div></div></div>';
+      rows += '<div class="freq-radio"></div>';
+      rows += '<div class="freq-info">';
+      rows += '<div class="freq-name">' + FREQS[i].name + (FREQS[i].popular ? ' <span class="freq-save">Populärast</span>' : '') + '</div>';
+      rows += '<div class="freq-sub">' + FREQS[i].sub + '</div>';
+      rows += '</div></div>';
     }
-    return '<div class="freq-wrap"><div class="opt-label">Prenumeration – välj frekvens</div><div class="freq-options" id="pdp-freq">' + rows + '<div style="margin-top:40px;padding:24px 0;border-top:1px solid rgba(0,0,0,0.08);display:flex;flex-wrap:wrap;gap:20px;align-items:center;justify-content:center">'
-      + '<span style="font-size:12px;color:#888;display:flex;align-items:center;gap:6px"><svg width="14" height="14" viewBox="0 0 14 14" fill="none"><path d="M7 1L8.5 5H13L9.5 7.5L11 11.5L7 9L3 11.5L4.5 7.5L1 5H5.5L7 1Z" stroke="currentColor" stroke-width="1.2" stroke-linejoin="round"/></svg>Fri frakt</span>'
-      + '<span style="font-size:12px;color:#888;display:flex;align-items:center;gap:6px"><svg width="14" height="14" viewBox="0 0 14 14" fill="none"><path d="M7 1L8.5 5.5L13 5.5L9.5 8L11 12.5L7 10L3 12.5L4.5 8L1 5.5L5.5 5.5L7 1Z" stroke="currentColor" stroke-width="1.2"/></svg>30 dagars öppet köp</span>'
-      + '<span style="font-size:12px;color:#888;display:flex;align-items:center;gap:6px"><svg width="14" height="14" viewBox="0 0 14 14" fill="none"><rect x="2" y="5" width="10" height="8" rx="1" stroke="currentColor" stroke-width="1.2"/><path d="M4 5V3.5C4 2.12 5.34 1 7 1C8.66 1 10 2.12 10 3.5V5" stroke="currentColor" stroke-width="1.2" stroke-linecap="round"/></svg>SSL-säker betalning</span>'
-      + '<span style="font-size:12px;color:#888;display:flex;align-items:center;gap:6px"><svg width="14" height="14" viewBox="0 0 14 14" fill="none"><path d="M2 3H12L11 10H3L2 3Z" stroke="currentColor" stroke-width="1.2" stroke-linejoin="round"/><path d="M2 3L1 1H0" stroke="currentColor" stroke-width="1.2" stroke-linecap="round"/></svg>Enkel avslutning</span>'
+
+    return '<div class="freq-wrap">'
+      + '<div class="opt-label">Prenumeration – välj frekvens</div>'
+      + '<div class="freq-options" id="pdp-freq">'
+      + rows
+      + '<div style="margin:16px 0 8px;font-size:11px;letter-spacing:1.5px;text-transform:uppercase;color:#aaa;display:flex;align-items:center;gap:10px"><span style="flex:1;height:1px;background:#ddd"></span>Eller<span style="flex:1;height:1px;background:#ddd"></span></div>'
+      + '<div class="freq-opt" data-freq="Engångsköp" onclick="pickFreq(this,\'Engångsköp\')">'
+      + '<div class="freq-radio"></div>'
+      + '<div class="freq-info"><div class="freq-name">Engångsköp</div><div class="freq-sub">Inget abonnemang – betala en gång</div></div>'
       + '</div>'
       + '</div></div>';
   }()) : '';
