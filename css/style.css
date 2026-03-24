@@ -333,12 +333,14 @@ body.men-mode .men-section {
 
 /* Hero */
 .w-hero {
-   min-height: 70vh;
+   min-height: 60vh;
+   max-height: 80vh;
    display: grid;
    grid-template-columns: 54% 46%;
    align-items: stretch;
    padding-top: 68px;
-   overflow: hidden
+   overflow: hidden;
+   height: 80vh;
 }
 
 .w-hero-left {
