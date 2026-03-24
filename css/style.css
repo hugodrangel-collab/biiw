@@ -478,7 +478,7 @@ body.men-mode .men-section {
 }
 
 .w-hero-right {
-   background: var(--w-accent-pale);
+   background: var(--w-accent-light);
    display: flex;
    align-items: center;
    justify-content: center;
@@ -518,7 +518,7 @@ body.men-mode .men-section {
    right: 32px;
    background: var(transparent);
    border-radius: 0px;
-   padding: 20px 24px;
+   padding: 0px 0px;
    z-index: 2;
    min-width: 180px;
    cursor: pointer
@@ -527,14 +527,14 @@ body.men-mode .men-section {
 .w-hero-price {
    font-family: var(--serif);
    font-size: 38px;
-   color: #fff;
+   color: var(--w-accent);
    line-height: 1;
    margin-bottom: 4px
 }
 
 .w-hero-price-note {
    font-size: 10px;
-   color: rgba(255, 255, 255, 0.75);
+   color: var(--w-accent);
    letter-spacing: 0.5px;
    margin-bottom: 14px
 }
@@ -549,8 +549,8 @@ body.men-mode .men-section {
    font-size: 10px;
    letter-spacing: 1px;
    text-transform: uppercase;
-   background: rgba(255, 255, 255, 0.18);
-   color: #fff;
+   background: rgba(255, 255, 255, 0.85);
+   color: var(--w-accent);
    padding: 5px 12px;
    border-radius: 100px;
    width: fit-content
