@@ -659,7 +659,7 @@ body.men-mode .men-section {
 
 /* Women products */
 .w-products {
-   padding: 120px 80px;
+   padding: 35px 70px;
    background: var(--w-bg)
 }
 
@@ -668,7 +668,7 @@ body.men-mode .men-section {
    grid-template-columns: 1fr 1fr;
    gap: 60px;
    align-items: end;
-   margin-bottom: 80px
+   margin-bottom: 40px
 }
 
 .w-prod-intro p {
@@ -710,29 +710,30 @@ body.men-mode .men-section {
 }
 
 .w-card-img {
-   height: 340px;
+   height: 400px;
    background: var(--w-accent-pale);
    display: flex;
    align-items: center;
    justify-content: center;
    position: relative;
-   overflow: hidden
+   overflow: hidden;
 }
 
 .w-card-img.olive {
-   background: var(--w-olive-l)
+   background: var(--w-olive-l);
 }
 
 .w-card-img img {
-   width: 72%;
-   max-height: 85%;
+   width: 82%;
+   max-width: 420px;
+   max-height: 92%;
    object-fit: contain;
-   transition: transform 0.5s cubic-bezier(0.34, 1.56, 0.64, 1);
-   filter: drop-shadow(0 16px 32px rgba(28, 24, 21, 0.15))
+   transition: transform 0.5s ease, opacity 0.35s ease;
+   filter: drop-shadow(0 16px 32px rgba(28, 24, 21, 0.15));
 }
 
 .w-card:hover .w-card-img img {
-   transform: scale(1.13) translateY(-8px)
+   transform: scale(1.04) translateY(-4px);
 }
 
 .w-pill {
