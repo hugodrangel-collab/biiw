@@ -138,6 +138,7 @@ function closePDP() {
   document.getElementById('pdp-page').classList.remove('open');
   if (currentGender === 'women') document.getElementById('main-site').style.display = 'block';
   else document.getElementById('men-site').style.display = 'block';
+  setTimeout(() => window.scrollTo(0, window.lastScrollY || 0), 50);
 }
 function renderPDP() {
   const p = currentPDP;
