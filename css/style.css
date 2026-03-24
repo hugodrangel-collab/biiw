@@ -333,9 +333,7 @@ body.men-mode .men-section {
 
 /* Hero */
 .w-hero {
-   height: calc(100vh - 160px);
-   min-height: unset;
-   max-height: unset;
+   height: 80vh;
    display: grid;
    grid-template-columns: 54% 46%;
    align-items: stretch;
