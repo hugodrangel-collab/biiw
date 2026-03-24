@@ -594,7 +594,7 @@ body.men-mode .men-section {
 .w-feat {
    padding: 44px 36px;
    border-right: 1px solid var(--w-border);
-   transition: background 0.2s, transform 0.2s;
+   transition: background 0.25s ease;
 }
 
 .w-feat:last-child {
@@ -602,8 +602,8 @@ body.men-mode .men-section {
 }
 
 .w-feat:hover {
-   background: var(--w-accent-pale);
-   transform: scale (1.03);
+   background: #fdf1f6;
+   transform: scale (1.05);
 }
 
 .w-feat h3 {
