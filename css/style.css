@@ -587,7 +587,8 @@ body.men-mode .men-section {
    display: grid;
    grid-template-columns: repeat(4, 1fr);
    background: var(--w-bg2);
-   border-bottom: 1px solid var(--w-border)
+   border-bottom: 1px solid var(--w-border);
+   align-items: stretch;
 }
 
 .w-feat {
@@ -601,7 +602,8 @@ body.men-mode .men-section {
 }
 
 .w-feat:hover {
-   background: var(--w-accent-pale) transform: scale (1.03)
+   background: var(--w-accent-pale);
+   transform: scale (1.03);
 }
 
 .w-feat h3 {
@@ -609,10 +611,15 @@ body.men-mode .men-section {
    font-size: 20px;
    font-weight: 400;
    margin-bottom: 8px;
-   color: var(--w-accent)
+   color: var(--w-accent);
+
+   display: block;
+   min-height: 48px;
+   /* perfect */
 }
 
 .w-feat p {
+   margin-top: 0;
    font-size: 13px;
    color: var(--w-ink);
    line-height: 1.7
@@ -3051,7 +3058,8 @@ body.men-mode .men-section {
 .w-feat-icon {
    margin-bottom: 16px;
    color: var(--w-accent);
-   display: flex
+   display: flex;
+   height: 28px;
 }
 
 .m-feat-icon {
