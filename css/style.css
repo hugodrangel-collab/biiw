@@ -516,8 +516,8 @@ body.men-mode .men-section {
    position: absolute;
    bottom: 32px;
    right: 32px;
-   background: var(--w-accent);
-   border-radius: 16px;
+   background: var(transparent);
+   border-radius: 0px;
    padding: 20px 24px;
    z-index: 2;
    min-width: 180px;
@@ -609,12 +609,12 @@ body.men-mode .men-section {
    font-size: 20px;
    font-weight: 400;
    margin-bottom: 8px;
-   color: var(--w-ink)
+   color: var(--w-accent)
 }
 
 .w-feat p {
    font-size: 13px;
-   color: var(--w-ink3);
+   color: var(--w-ink);
    line-height: 1.7
 }
 
@@ -757,12 +757,12 @@ body.men-mode .men-section {
    font-size: 26px;
    font-weight: 400;
    margin-bottom: 8px;
-   color: var(--w-ink)
+   color: var(--w-accent)
 }
 
 .w-card-desc {
    font-size: 14px;
-   color: var(--w-ink3);
+   color: var(--w-ink);
    line-height: 1.7;
    margin-bottom: 20px
 }
@@ -946,12 +946,12 @@ body.men-mode .men-section {
    font-size: 24px;
    font-weight: 400;
    margin-bottom: 12px;
-   color: var(--w-ink)
+   color: var(--w-accent)
 }
 
 .w-how-desc {
    font-size: 14px;
-   color: var(--w-ink3);
+   color: var(--w-ink);
    line-height: 1.8
 }
 
