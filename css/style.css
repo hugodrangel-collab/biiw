@@ -501,7 +501,7 @@ body.men-mode .men-section {
 .w-hero-right img {
    position: relative;
    z-index: 1;
-   width: 58%;
+   width: 44%;
    max-width: 310px;
    filter: drop-shadow(0 40px 60px rgba(28, 24, 21, 0.18));
    animation: float 4s ease-in-out infinite alternate;
@@ -526,7 +526,7 @@ body.men-mode .men-section {
 
 .w-hero-price {
    font-family: var(--serif);
-   font-size: 38px;
+   font-size: 64px;
    color: var(--w-accent);
    line-height: 1;
    margin-bottom: 4px
@@ -546,7 +546,7 @@ body.men-mode .men-section {
 }
 
 .w-hero-slogan {
-   font-size: 10px;
+   font-size: 14px;
    letter-spacing: 1px;
    text-transform: uppercase;
    background: rgba(255, 255, 255, 0.85);
