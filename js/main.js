@@ -5,9 +5,16 @@ const PRODUCTS = {
     id: 'wstart', gender: 'w', name: 'Startpaket Dam', galClass: 'w-gal', infoClass: 'w-info',
     tagline: 'Allt du behöver för att börja din biiw-resa. Ergonomiskt handtag i tung zinklegering och två 5-bladiga blad i rostfritt stål med fuktgivande aloe vera gel-remsa. Välj din favoritfärg bland sju alternativ.',
     price: 99, priceNote: 'inkl. 25% moms', freeClass: 'free-w',
-    images: ['W1', 'W3', 'W2', 'W4', 'W5'],
+    images: ['CW_ROSA', 'CW_LAVENDEL', 'CW_LILA', 'CW_HOTPINK'],
     hasColor: true, hasFreq: true,
-    colors: [{ name: 'Rose', hex: '#C85A7A', img: 'CW_ROSA' }, { name: 'Lavendel', hex: '#8B5CF6', img: 'CW_LAVENDEL' }, { name: 'Forest Green', hex: '#2E9E6E', img: 'CW_FOREST' }],
+
+    colors: [
+      { name: 'Rose', hex: '#C85A7A', img: 'CW_ROSA' },
+      { name: 'Lavendel', hex: '#D8C6F2', img: 'CW_LAVENDEL' },
+      { name: 'Lila', hex: '#8E5BBE', img: 'CW_LILA' },
+      { name: 'Hot Pink', hex: '#FF4F9A', img: 'CW_HOTPINK' }
+    ],
+
     specs: [['Handtag material', 'Zinklegering (Zamak)'], ['Blad material', 'Rostfritt stål, 5-bladssystem'], ['Antal blad i startpaket', '2 st'], ['Gel-remsa', 'Aloe vera & vitamin E'], ['Rörligt huvud', 'Ja, 45° flexibelt'], ['Vikt (handtag)', '62 g'], ['Längd', '15,5 cm'], ['Förpackning', 'Återvinningsbar kartong, FSC']],
     features: [['Ergonomiskt handtag i zinklegering', 'Tyngden och balansen ger kontroll och precision – utformat för att följa kroppens kurvor.'], ['5-bladssystem i rostfritt stål', 'Fler tätt placerade blad ger slätare resultat med färre drag och minimerar inåtväxande hår.'], ['Fuktgivande gel-remsa', 'Aloe vera och vitamin E aktiveras av vatten och skapar ett skyddande lager mot friktion.'], ['Rörligt huvud, 45°', 'Bladhuvudet anpassar sig mjukt efter kroppens former för en jämn och nära rakning.']],
     reviews: [{ name: 'Sofia K.', stars: 5, text: 'Äntligen en rakhyvel som känns lyxig utan att kosta skjortan. Handtaget har en perfekt tyngd.' }, { name: 'Emma L.', stars: 5, text: 'Ser fantastiskt ut i badrummet. Gel-remsan gör verklig skillnad – ingen irritation.' }, { name: 'Tilda H.', stars: 4, text: 'Prenumerationen är genial, aldrig utan blad längre.' }]
@@ -50,9 +57,10 @@ const FREQS = [{ name: 'Varje månad', sub: '4 nya rakblad levereras varje måna
 const IMG_MAP = {
   W1: 'images/dam-razor-1.jpg', W2: 'images/dam-razor-2.jpg', W3: 'images/dam-razor-3.jpg', W4: 'images/dam-razor-4.jpg', W5: 'images/dam-razor-5.jpg',
   M1: 'images/herr-razor-1.jpg', M2: 'images/herr-razor-2.jpg', M3: 'images/herr-razor-3.jpg', M4: 'images/herr-razor-4.jpg', M5: 'images/herr-razor-5.jpg',
-  CW_ROSA: 'images/color-rose.jpg',
-  CW_LAVENDEL: 'images/color-lavendel.jpg',
-  CW_FOREST: 'images/color-forest.jpg',
+  CW_ROSA: 'images/razor-rosa.png',
+  CW_LAVENDEL: 'images/dam-lila-front.png',
+  CW_LILA: 'images/dam-dark-lila-front.png',
+  CW_HOTPINK: 'images/dam-hot-pink-front.png',
   REFILL_DAM_1: 'images/refill-dam-1.jpg',
   REFILL_DAM_2: 'images/refill-dam-2.jpg',
 };
