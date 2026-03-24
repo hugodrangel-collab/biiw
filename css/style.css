@@ -102,7 +102,7 @@ nav.men-nav {
    text-transform: uppercase;
    color: var(--w-ink3);
    text-decoration: none;
-   transition: color 0.2s
+   transition: color 0.2s, transform 0.2s display: inline-block
 }
 
 .women-nav .nav-links a:hover {
@@ -4229,7 +4229,7 @@ body.men-mode .men-section {
 
 .women-nav .nav-links a:hover {
    color: var(--w-accent);
-   font-size: 13px
+   font-size: 13px transform: scale(1.1);
 }
 
 .men-nav .nav-links a:hover {
