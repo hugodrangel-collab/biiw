@@ -9,10 +9,10 @@ const PRODUCTS = {
     hasColor: true, hasFreq: true,
 
     colors: [
-      { name: 'Rose', hex: '#C85A7A', img: 'CW_ROSA' },
-      { name: 'Lavendel', hex: '#D8C6F2', img: 'CW_LAVENDEL' },
-      { name: 'Lila', hex: '#8E5BBE', img: 'CW_LILA' },
-      { name: 'Hot Pink', hex: '#FF4F9A', img: 'CW_HOTPINK' }
+      { name: 'Rose', hex: '#F08BC7', img: 'ROSE_FRONT_NICE' },
+      { name: 'Hot Pink', hex: '#FF1493', img: 'HOT_PINK_FRONT_NICE' },
+      { name: 'Lavendel', hex: '#C7B4E3', img: 'LAVENDEL_FRONT_NICE' },
+      { name: 'Lila', hex: '#7E5A9B', img: 'LILA_FRONT_NICE' }
     ],
 
     specs: [['Handtag material', 'Zinklegering (Zamak)'], ['Blad material', 'Rostfritt stål, 5-bladssystem'], ['Antal blad i startpaket', '2 st'], ['Gel-remsa', 'Aloe vera & vitamin E'], ['Rörligt huvud', 'Ja, 45° flexibelt'], ['Vikt (handtag)', '62 g'], ['Längd', '15,5 cm'], ['Förpackning', 'Återvinningsbar kartong, FSC']],
@@ -55,16 +55,67 @@ const FREQS = [{ name: 'Varje månad', sub: '4 nya rakblad levereras varje måna
 
 // Image map – replaced by Python
 const IMG_MAP = {
-  W1: 'images/dam-razor-1.jpg', W2: 'images/dam-razor-2.jpg', W3: 'images/dam-razor-3.jpg', W4: 'images/dam-razor-4.jpg', W5: 'images/dam-razor-5.jpg',
-  M1: 'images/herr-razor-1.jpg', M2: 'images/herr-razor-2.jpg', M3: 'images/herr-razor-3.jpg', M4: 'images/herr-razor-4.jpg', M5: 'images/herr-razor-5.jpg',
-  CW_ROSA: 'images/razor-rosa.png',
-  CW_LAVENDEL: 'images/dam-lila-front.png',
-  CW_LILA: 'images/dam-dark-lila-front.png',
-  CW_HOTPINK: 'images/dam-hot-pink-front.png',
+  W1: 'images/dam-razor-1.jpg',
+  W2: 'images/dam-razor-2.jpg',
+  W3: 'images/dam-razor-3.jpg',
+  W4: 'images/dam-razor-4.jpg',
+  W5: 'images/dam-razor-5.jpg',
+
+  M1: 'images/herr-razor-1.jpg',
+  M2: 'images/herr-razor-2.jpg',
+  M3: 'images/herr-razor-3.jpg',
+  M4: 'images/herr-razor-4.jpg',
+  M5: 'images/herr-razor-5.jpg',
+
   REFILL_DAM_1: 'images/refill-dam-1.jpg',
   REFILL_DAM_2: 'images/refill-dam-2.jpg',
+
+  ROSE_FRONT_NICE: 'images/rose_front_nice.png',
+  ROSE_BACK_NICE: 'images/rose_back_nice.png',
+  ROSE_SIDE_NICE: 'images/rose_side_nice.png',
+  ROSE_CASE_NICE: 'images/rose_case_nice.png',
+
+  HOT_PINK_FRONT_NICE: 'images/hot_pink_front_nice.png',
+  HOT_PINK_BACK_NICE: 'images/hot_pink_back_nice.png',
+  HOT_PINK_SIDE_NICE: 'images/hot_pink_side_nice.png',
+  HOT_PINK_CASE_NICE: 'images/hot_pink_case_nice.png',
+
+  LAVENDEL_FRONT_NICE: 'images/lavendel_front_nice.png',
+  LAVENDEL_BACK_NICE: 'images/lavendel_back_nice.png',
+  LAVENDEL_SIDE_NICE: 'images/lavendel_side_nice.png',
+  LAVENDEL_CASE_NICE: 'images/lavendel_case_nice.png',
+
+  LILA_FRONT_NICE: 'images/lila_front_nice.png',
+  LILA_BACK_NICE: 'images/lila_back_nice.png',
+  LILA_SIDE_NICE: 'images/lila_side_nice.png',
+  LILA_CASE_NICE: 'images/lila_case_nice.png',
+
 };
-function img(k) { return IMG_MAP[k] }
+const COLOR_GALLERIES = {
+  wstart: {
+    'Rose': ['ROSE_FRONT_NICE', 'ROSE_BACK_NICE', 'ROSE_SIDE_NICE', 'ROSE_CASE_NICE'],
+    'Hot Pink': ['HOT_PINK_FRONT_NICE', 'HOT_PINK_BACK_NICE', 'HOT_PINK_SIDE_NICE', 'HOT_PINK_CASE_NICE'],
+    'Lavendel': ['LAVENDEL_FRONT_NICE', 'LAVENDEL_BACK_NICE', 'LAVENDEL_SIDE_NICE', 'LAVENDEL_CASE_NICE'],
+    'Lila': ['LILA_FRONT_NICE', 'LILA_BACK_NICE', 'LILA_SIDE_NICE', 'LILA_CASE_NICE']
+  }
+};
+
+
+function img(k) {
+  return IMG_MAP[k];
+}
+function getGalleryImages(product, colorName) {
+  if (
+    product &&
+    product.id === 'wstart' &&
+    colorName &&
+    COLOR_GALLERIES.wstart[colorName]
+  ) {
+    return COLOR_GALLERIES.wstart[colorName].map(img);
+  }
+
+  return (product.images || []).map(img);
+}
 
 // ─── State ───
 let currentGender = 'women';
@@ -102,9 +153,9 @@ function openPDP(id) {
   window.lastScrollY = window.scrollY;
   currentPDP = PRODUCTS[id];
   const g = currentPDP.gender;
-  pdpImages = currentPDP.images.map(img);
-  pdpImgIdx = 0;
   pdpColor = currentPDP.colors.length ? currentPDP.colors[0].name : '';
+  pdpImages = getGalleryImages(currentPDP, pdpColor);
+  pdpImgIdx = 0;
   pdpFreq = 'Varje månad'; pdpQty = 1;
   renderPDP();
   renderPDPFooter(g);
@@ -243,19 +294,12 @@ function pickColor(el) {
   var colorName = el.title || el.dataset.name; pdpColor = colorName;
   var nameEl = document.getElementById('pdp-color-name');
   if (nameEl) nameEl.textContent = colorName;
-  // Swap gallery image based on color
-  var prod = currentPDP;
-  if (prod && prod.colors) {
-    var col = prod.colors.find(function (c) { return c.name === colorName; });
-    if (col && col.img && IMG_MAP[col.img]) {
-      var mainImg = document.getElementById('pdp-main-img');
-      if (mainImg) mainImg.src = IMG_MAP[col.img];
-      // Update first thumbnail too
-      var firstThumb = document.querySelector('.pdp-thumb');
-      if (firstThumb) { firstThumb.src = IMG_MAP[col.img]; pdpImages[0] = IMG_MAP[col.img]; }
-    }
-  }
+
+  pdpImages = getGalleryImages(currentPDP, colorName);
+  pdpImgIdx = 0;
+  renderPDP();
 }
+
 function removeItem(k) { cart = cart.filter(i => i.key !== k); updateCartUI(); renderOSItems(); }
 function updateCartUI() {
   const count = cart.reduce((s, i) => s + i.qty, 0); const total = cart.reduce((s, i) => s + i.price * i.qty, 0);

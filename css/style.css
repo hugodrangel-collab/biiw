@@ -2270,8 +2270,8 @@ body.men-mode .men-section {
 }
 
 .pdp-main-img img {
-   max-width: 88%;
-   max-height: 88%;
+   height: 520px;
+   width: auto;
    object-fit: contain;
    transition: opacity 0.3s;
    background: #ffffff;
