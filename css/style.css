@@ -558,7 +558,7 @@ body.men-mode .men-section {
 
 /* Women strip */
 .w-strip {
-   background: var(--w-dark);
+   background: var(--w-accent-light);
    padding: 13px 0;
    overflow: hidden
 }
@@ -574,7 +574,7 @@ body.men-mode .men-section {
    font-size: 11px;
    letter-spacing: 2.5px;
    text-transform: uppercase;
-   color: rgba(240, 234, 227, 0.6);
+   color: #ffffff;
    flex-shrink: 0
 }
 
