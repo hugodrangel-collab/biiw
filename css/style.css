@@ -501,8 +501,8 @@ body.men-mode .men-section {
 .w-hero-right img {
    position: relative;
    z-index: 1;
-   width: 44%;
-   max-width: 310px;
+   width: 48%;
+   max-width: 360px;
    filter: drop-shadow(0 40px 60px rgba(28, 24, 21, 0.18));
    animation: float 4s ease-in-out infinite alternate;
    transition: transform 0.4s
@@ -823,9 +823,9 @@ body.men-mode .men-section {
 
 .w-gal-grid {
    display: grid;
-   grid-template-columns: repeat(5, 1fr);
-   grid-template-rows: 280px 280px;
-   gap: 4px
+   grid-template-columns: repeat(3, 1fr);
+   grid-template-rows: repeat(2, 320px);
+   gap: 12px;
 }
 
 .w-gi {
@@ -834,10 +834,6 @@ body.men-mode .men-section {
    cursor: pointer
 }
 
-.w-gi:first-child {
-   grid-column: span 2;
-   grid-row: span 2
-}
 
 .w-gi img {
    width: 100%;

@@ -96,6 +96,13 @@ const IMG_MAP = {
   LILA_SIDE_NICE: 'images/lila_side_nice.png',
   LILA_CASE_NICE: 'images/lila_case_nice.png',
 
+  HOT_PINK: 'images/hot_pink.JPG',
+  HOT_PINK_CASE: 'images/hot_pink_case_nice.png',
+  ROSE: 'images/rose.JPG',
+  LAVENDEL: 'images/lavendel.JPG',
+  LILA: 'images/lila.JPG',
+  LILA_CASE: 'images/lila_case_nice.png',
+
 };
 const COLOR_GALLERIES = {
   wstart: {
