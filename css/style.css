@@ -777,6 +777,7 @@ body.men-mode .men-section {
    margin-bottom: 20px
 }
 
+
 .w-card-footer {
    display: flex;
    align-items: center;
@@ -929,14 +930,14 @@ body.men-mode .men-section {
 /* Women how */
 .w-how {
    padding: 120px 80px;
-   background: var(--w-olive-l)
+   background: var(--w-olive-l);
 }
 
 .w-how-grid {
    display: grid;
    grid-template-columns: repeat(3, 1fr);
    gap: 56px;
-   margin-top: 72px
+   margin-top: 72px;
 }
 
 .w-how-num {
@@ -944,7 +945,19 @@ body.men-mode .men-section {
    font-size: 72px;
    color: rgba(74, 82, 64, 0.18);
    line-height: 1;
-   margin-bottom: 16px
+   margin-bottom: 16px;
+   display: flex;
+   align-items: center;
+   gap: 8px;
+}
+
+.how-icon {
+   width: 18px;
+   height: 18px;
+   stroke: currentColor;
+   opacity: 0.7;
+   fill: none;
+   flex: 0 0 auto;
 }
 
 .w-how-title {
